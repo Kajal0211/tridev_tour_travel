@@ -1,53 +1,59 @@
-// Application data
+// Enhanced Application data with emojis and better descriptions
 const appData = {
   "destinations": [
     {
       "id": 1,
       "name": "Kerala",
       "region": "Asia",
-      "description": "God's Own Country - backwaters, houseboats, and spice plantations",
-      "highlights": ["Backwater cruises", "Spice plantations", "Ayurvedic treatments", "Hill stations"],
-      "image": "kerala-backwaters.jpg"
+      "description": "🥥 God's Own Country - Mystical backwaters, luxury houseboats, and aromatic spice plantations await your discovery",
+      "highlights": ["🚤 Backwater cruises", "🌿 Spice plantations", "💆 Ayurvedic treatments", "🏔️ Hill stations"],
+      "image": "kerala-backwaters.jpg",
+      "emoji": "🥥"
     },
     {
       "id": 2,
       "name": "Rajasthan",
       "region": "Asia", 
-      "description": "Land of Kings - palaces, deserts, and rich cultural heritage",
-      "highlights": ["Desert safari", "Palace hotels", "Camel rides", "Cultural shows"],
-      "image": "rajasthan-palace.jpg"
+      "description": "🏰 Land of Kings - Magnificent palaces, golden deserts, and rich cultural heritage that tells tales of royalty",
+      "highlights": ["🐪 Desert safari", "🏰 Palace hotels", "🐫 Camel rides", "🎭 Cultural shows"],
+      "image": "rajasthan-palace.jpg",
+      "emoji": "🏰"
     },
     {
       "id": 3,
       "name": "Goa",
       "region": "Asia",
-      "description": "Beach paradise with Portuguese heritage and vibrant nightlife",
-      "highlights": ["Beautiful beaches", "Water sports", "Colonial architecture", "Nightlife"],
-      "image": "goa-beach.jpg"
+      "description": "🏖️ Beach paradise with Portuguese heritage, golden sands, and vibrant nightlife that never sleeps",
+      "highlights": ["🏖️ Beautiful beaches", "🏄 Water sports", "🏛️ Colonial architecture", "🎉 Nightlife"],
+      "image": "goa-beach.jpg",
+      "emoji": "🏖️"
     },
     {
       "id": 4,
       "name": "Dubai",
       "region": "Asia",
-      "description": "Futuristic city with luxury shopping and iconic architecture",
-      "highlights": ["Burj Khalifa", "Desert safari", "Luxury shopping", "Modern architecture"],
-      "image": "dubai-skyline.jpg"
+      "description": "🏙️ Futuristic metropolis with towering skyscrapers, luxury shopping, and iconic modern architecture",
+      "highlights": ["🗼 Burj Khalifa", "🏜️ Desert safari", "🛍️ Luxury shopping", "🏗️ Modern architecture"],
+      "image": "dubai-skyline.jpg",
+      "emoji": "🏙️"
     },
     {
       "id": 5,
       "name": "Thailand",
       "region": "Asia",
-      "description": "Land of Smiles with temples, beaches, and delicious cuisine",
-      "highlights": ["Ancient temples", "Island hopping", "Thai massage", "Street food"],
-      "image": "thailand-temple.jpg"
+      "description": "🛕 Land of Smiles with ancient temples, tropical beaches, and the most delicious cuisine in the world",
+      "highlights": ["🛕 Ancient temples", "🏝️ Island hopping", "💆 Thai massage", "🍜 Street food"],
+      "image": "thailand-temple.jpg",
+      "emoji": "🛕"
     },
     {
       "id": 6,
       "name": "Singapore",
       "region": "Asia",
-      "description": "Modern city-state with gardens, cuisine, and attractions",
-      "highlights": ["Gardens by the Bay", "Marina Bay Sands", "Hawker centers", "Universal Studios"],
-      "image": "singapore-gardens.jpg"
+      "description": "🌸 Modern city-state with futuristic gardens, incredible cuisine, and world-class attractions",
+      "highlights": ["🌺 Gardens by the Bay", "🏨 Marina Bay Sands", "🍜 Hawker centers", "🎢 Universal Studios"],
+      "image": "singapore-gardens.jpg",
+      "emoji": "🌸"
     }
   ],
   "packages": [
@@ -59,9 +65,10 @@ const appData = {
       "duration": "5 Days 4 Nights",
       "type": "Cultural",
       "image": "kerala-package.jpg",
-      "inclusions": ["Houseboat stay", "All meals", "Airport transfers", "Sightseeing"],
-      "exclusions": ["Flight tickets", "Personal expenses", "Travel insurance"],
-      "highlights": "Experience the serene backwaters of Kerala with luxury houseboat accommodation"
+      "inclusions": ["🚤 Luxury houseboat stay", "🍽️ All gourmet meals", "✈️ Airport transfers", "📸 Guided sightseeing"],
+      "exclusions": ["✈️ Flight tickets", "🛍️ Personal expenses", "🛡️ Travel insurance"],
+      "highlights": "🥥 Experience the serene backwaters of Kerala with luxury houseboat accommodation and authentic local cuisine",
+      "emoji": "🥥"
     },
     {
       "id": 2,
@@ -71,9 +78,10 @@ const appData = {
       "duration": "7 Days 6 Nights",
       "type": "Cultural",
       "image": "rajasthan-package.jpg",
-      "inclusions": ["Palace hotels", "All meals", "Desert safari", "Cultural shows"],
-      "exclusions": ["Flight tickets", "Personal shopping", "Tips"],
-      "highlights": "Explore the magnificent palaces and forts of Rajasthan"
+      "inclusions": ["🏰 Heritage palace hotels", "🍽️ All royal meals", "🐪 Desert safari", "🎭 Cultural shows"],
+      "exclusions": ["✈️ Flight tickets", "🛍️ Personal shopping", "💰 Tips"],
+      "highlights": "🏰 Explore the magnificent palaces and forts of Rajasthan while staying in heritage palace hotels",
+      "emoji": "🏰"
     },
     {
       "id": 3,
@@ -83,9 +91,10 @@ const appData = {
       "duration": "4 Days 3 Nights",
       "type": "Beach",
       "image": "goa-package.jpg",
-      "inclusions": ["Beach resort stay", "Breakfast", "Airport transfers", "Water sports"],
-      "exclusions": ["Lunch and dinner", "Alcohol", "Personal expenses"],
-      "highlights": "Relax on pristine beaches with water sports activities"
+      "inclusions": ["🏖️ Beachfront resort stay", "🥞 Daily breakfast", "✈️ Airport transfers", "🏄 Water sports"],
+      "exclusions": ["🍽️ Lunch and dinner", "🍺 Alcohol", "🛍️ Personal expenses"],
+      "highlights": "🏖️ Relax on pristine beaches with exciting water sports activities and beachfront luxury",
+      "emoji": "🏖️"
     },
     {
       "id": 4,
@@ -95,9 +104,10 @@ const appData = {
       "duration": "6 Days 5 Nights",
       "type": "Luxury",
       "image": "dubai-package.jpg",
-      "inclusions": ["5-star hotel", "Desert safari", "Burj Khalifa tour", "Dubai Mall visit"],
-      "exclusions": ["Flight tickets", "Meals except breakfast", "Shopping"],
-      "highlights": "Experience luxury in the modern metropolis of Dubai"
+      "inclusions": ["⭐ 5-star hotel", "🏜️ Desert safari", "🗼 Burj Khalifa tour", "🛍️ Dubai Mall visit"],
+      "exclusions": ["✈️ Flight tickets", "🍽️ Meals except breakfast", "🛍️ Shopping"],
+      "highlights": "🏙️ Experience ultimate luxury in the modern metropolis of Dubai with world-class amenities",
+      "emoji": "🏙️"
     },
     {
       "id": 5,
@@ -107,9 +117,10 @@ const appData = {
       "duration": "6 Days 5 Nights",
       "type": "Adventure",
       "image": "thailand-package.jpg",
-      "inclusions": ["Island transfers", "Beach resorts", "Snorkeling", "Temple visits"],
-      "exclusions": ["International flights", "Alcohol", "Personal expenses"],
-      "highlights": "Discover beautiful islands and rich Thai culture"
+      "inclusions": ["🚤 Island transfers", "🏖️ Beach resorts", "🤿 Snorkeling", "🛕 Temple visits"],
+      "exclusions": ["✈️ International flights", "🍺 Alcohol", "🛍️ Personal expenses"],
+      "highlights": "🛕 Discover beautiful tropical islands and immerse yourself in rich Thai culture and traditions",
+      "emoji": "🛕"
     },
     {
       "id": 6,
@@ -119,9 +130,10 @@ const appData = {
       "duration": "4 Days 3 Nights", 
       "type": "City",
       "image": "singapore-package.jpg",
-      "inclusions": ["City hotel", "Gardens by the Bay", "Marina Bay Sands", "Food tours"],
-      "exclusions": ["Flight tickets", "Shopping", "Additional attractions"],
-      "highlights": "Explore the garden city with modern attractions"
+      "inclusions": ["🏨 City center hotel", "🌺 Gardens by the Bay", "🏨 Marina Bay Sands", "🍜 Food tours"],
+      "exclusions": ["✈️ Flight tickets", "🛍️ Shopping", "🎢 Additional attractions"],
+      "highlights": "🌸 Explore the stunning garden city with futuristic attractions and incredible cuisine",
+      "emoji": "🌸"
     }
   ],
   "testimonials": [
@@ -129,498 +141,696 @@ const appData = {
       "name": "Priya Sharma",
       "location": "Mumbai",
       "rating": 5,
-      "comment": "Amazing Kerala backwater experience! Tridev Travel Agency made our honeymoon unforgettable."
+      "comment": "✨ Amazing Kerala backwater experience! Tridev Travel Agency made our honeymoon absolutely unforgettable. The houseboat was luxurious and the service was impeccable! 🥥💕",
+      "emoji": "💕"
     },
     {
       "name": "Rajesh Kumar",
       "location": "Delhi",
       "rating": 5,
-      "comment": "Professional service and great value for money. Highly recommend their Rajasthan tour."
+      "comment": "🏰 Professional service and incredible value for money. Their Rajasthan tour exceeded all our expectations. The palace hotels were like a dream! Highly recommended! ⭐",
+      "emoji": "⭐"
     },
     {
       "name": "Anita Patel",
       "location": "Ahmedabad",
       "rating": 4,
-      "comment": "Wonderful Goa trip with family. Kids loved the water sports and beach activities."
+      "comment": "🏖️ Wonderful Goa trip with the entire family. The kids absolutely loved the water sports and beach activities. Perfect vacation planning! 🌊👨‍👩‍👧‍👦",
+      "emoji": "🌊"
     }
   ]
 };
 
-// Global state
-let currentSection = 'home';
-let filteredDestinations = [...appData.destinations];
-let filteredPackages = [...appData.packages];
+// Enhanced global variables
+let currentDestinations = [...appData.destinations];
+let currentPackages = [...appData.packages];
+let isLoading = false;
 
-// DOM Elements
-const navLinks = document.querySelectorAll('.nav-link');
-const sections = document.querySelectorAll('.section');
-const navToggle = document.getElementById('nav-toggle');
-const navMenu = document.getElementById('nav-menu');
-
-// Initialize app
+// Initialize the application with enhanced effects
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
-    loadContent();
-    attachEventListeners();
+    setupEventListeners();
+    loadFeaturedContent();
+    addScrollEffects();
+    addIntersectionObserver();
 });
 
+// Initialize application with enhanced animations
 function initializeApp() {
-    // Set initial active states
-    updateNavigation('home');
     showSection('home');
+    setupNavigation();
+    setupMobileMenu();
+    addLoadingStates();
 }
 
-function loadContent() {
-    loadFeaturedDestinations();
-    loadFeaturedPackages();
-    loadTestimonials();
-    loadAllDestinations();
-    loadAllPackages();
-}
-
-function attachEventListeners() {
-    // Navigation
-    navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
+// Enhanced event listeners
+function setupEventListeners() {
+    // Navigation with smooth transitions
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.addEventListener('click', function(e) {
             e.preventDefault();
-            const section = link.getAttribute('data-section');
-            showSection(section);
+            const section = this.getAttribute('data-section');
+            showSectionWithTransition(section);
         });
     });
 
-    // Mobile menu toggle
-    navToggle.addEventListener('click', toggleMobileMenu);
-
-    // Search functionality
-    const destinationSearch = document.getElementById('destination-search');
-    const packageSearch = document.getElementById('package-search');
-    
-    if (destinationSearch) {
-        destinationSearch.addEventListener('input', filterDestinations);
-    }
-    
-    if (packageSearch) {
-        packageSearch.addEventListener('input', filterPackages);
-    }
-
-    // Filter buttons for destinations
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    filterButtons.forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            // Update active state
-            filterButtons.forEach(b => b.classList.remove('active'));
-            e.target.classList.add('active');
-            
-            const filter = e.target.getAttribute('data-filter');
-            filterDestinationsByRegion(filter);
-        });
-    });
-
-    // Package filters
-    const priceFilter = document.getElementById('price-filter');
-    const typeFilter = document.getElementById('type-filter');
-    
-    if (priceFilter) {
-        priceFilter.addEventListener('change', filterPackages);
-    }
-    
-    if (typeFilter) {
-        typeFilter.addEventListener('change', filterPackages);
-    }
-
-    // Form submissions
+    // Enhanced forms with better feedback
     const quickInquiryForm = document.getElementById('quick-inquiry-form');
-    const contactForm = document.getElementById('contact-form');
-    const bookingForm = document.getElementById('booking-form');
-
     if (quickInquiryForm) {
-        quickInquiryForm.addEventListener('submit', handleQuickInquiry);
+        quickInquiryForm.addEventListener('submit', handleQuickInquiryEnhanced);
     }
 
+    const contactForm = document.getElementById('contact-form');
     if (contactForm) {
-        contactForm.addEventListener('submit', handleContactForm);
+        contactForm.addEventListener('submit', handleContactFormEnhanced);
     }
 
+    const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
-        bookingForm.addEventListener('submit', handleBookingForm);
+        bookingForm.addEventListener('submit', handleBookingFormEnhanced);
     }
 
-    // Close modals when clicking outside
-    document.addEventListener('click', (e) => {
-        if (e.target.classList.contains('modal-overlay')) {
-            closeModal(e.target.parentElement.id);
+    // Enhanced filters with animations
+    setupFilterListenersEnhanced();
+}
+
+// Enhanced section transitions
+function showSectionWithTransition(sectionName) {
+    const currentSection = document.querySelector('.section.active');
+    const targetSection = document.getElementById(sectionName);
+    
+    if (currentSection && targetSection && currentSection !== targetSection) {
+        // Fade out current section
+        currentSection.style.opacity = '0';
+        currentSection.style.transform = 'translateY(20px)';
+        
+        setTimeout(() => {
+            currentSection.classList.remove('active');
+            targetSection.classList.add('active');
+            
+            // Fade in new section
+            requestAnimationFrame(() => {
+                targetSection.style.opacity = '1';
+                targetSection.style.transform = 'translateY(0)';
+            });
+            
+            // Load content based on section
+            switch(sectionName) {
+                case 'destinations':
+                    loadDestinationsEnhanced();
+                    break;
+                case 'packages':
+                    loadPackagesEnhanced();
+                    break;
+            }
+        }, 300);
+    }
+    
+    // Update navigation with enhanced effects
+    updateNavigationEnhanced(sectionName);
+}
+
+// Enhanced navigation update
+function updateNavigationEnhanced(sectionName) {
+    document.querySelectorAll('.nav-link').forEach(link => {
+        link.classList.remove('active');
+        if (link.getAttribute('data-section') === sectionName) {
+            link.classList.add('active');
+            // Add ripple effect
+            addRippleEffect(link);
         }
     });
+}
 
-    // Keyboard navigation for modals
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') {
-            const openModal = document.querySelector('.modal:not(.hidden)');
-            if (openModal) {
-                closeModal(openModal.id);
+// Add ripple effect to elements
+function addRippleEffect(element) {
+    const ripple = document.createElement('span');
+    ripple.className = 'ripple-effect';
+    element.appendChild(ripple);
+    
+    setTimeout(() => {
+        ripple.remove();
+    }, 600);
+}
+
+// Enhanced loading states
+function addLoadingStates() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .loading-shimmer {
+            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+        
+        .ripple-effect {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.6);
+            transform: scale(0);
+            animation: ripple 0.6s linear;
+            pointer-events: none;
+        }
+        
+        @keyframes ripple {
+            to {
+                transform: scale(4);
+                opacity: 0;
             }
         }
-    });
+    `;
+    document.head.appendChild(style);
 }
 
-// Navigation functions
-function showSection(sectionName) {
-    // Hide all sections
-    sections.forEach(section => {
-        section.classList.remove('active');
-    });
-
-    // Show target section
-    const targetSection = document.getElementById(sectionName);
-    if (targetSection) {
-        targetSection.classList.add('active');
-        currentSection = sectionName;
-        updateNavigation(sectionName);
-    }
-
-    // Close mobile menu
-    navMenu.classList.remove('active');
-    navToggle.classList.remove('active');
-
-    // Scroll to top
-    window.scrollTo(0, 0);
-}
-
-function updateNavigation(activeSection) {
-    navLinks.forEach(link => {
-        const section = link.getAttribute('data-section');
-        if (section === activeSection) {
-            link.classList.add('active');
-        } else {
-            link.classList.remove('active');
-        }
-    });
-}
-
-function toggleMobileMenu() {
-    navMenu.classList.toggle('active');
-    navToggle.classList.toggle('active');
-}
-
-// Content loading functions
-function loadFeaturedDestinations() {
+// Enhanced featured content loading
+function loadFeaturedDestinationsEnhanced() {
     const container = document.getElementById('featured-destinations');
     if (!container) return;
-
-    // Show first 3 destinations
-    const featured = appData.destinations.slice(0, 3);
-    container.innerHTML = featured.map(destination => createDestinationCard(destination)).join('');
+    
+    const featuredDestinations = appData.destinations.slice(0, 3);
+    
+    container.innerHTML = featuredDestinations.map((destination, index) => `
+        <div class="card slide-up" style="animation-delay: ${index * 0.2}s" onclick="showDestinationDetailsEnhanced(${destination.id})">
+            <div class="card-image">
+                ${destination.emoji} ${destination.name}
+                <div class="card-overlay">
+                    <button class="btn btn--outline">✨ Discover More</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">${destination.emoji} ${destination.name}</h3>
+                <p class="card-description">${destination.description}</p>
+                <div class="card-highlights">
+                    ${destination.highlights.slice(0, 3).map(highlight => 
+                        `<span class="highlight-tag">${highlight}</span>`
+                    ).join('')}
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    // Add hover effects
+    addCardHoverEffects();
 }
 
-function loadFeaturedPackages() {
+// Enhanced packages loading
+function loadFeaturedPackagesEnhanced() {
     const container = document.getElementById('featured-packages');
     if (!container) return;
-
-    // Show first 3 packages
-    const featured = appData.packages.slice(0, 3);
-    container.innerHTML = featured.map(pkg => createPackageCard(pkg)).join('');
+    
+    const featuredPackages = appData.packages.slice(0, 3);
+    
+    container.innerHTML = featuredPackages.map((pkg, index) => `
+        <div class="card slide-up" style="animation-delay: ${index * 0.2}s" onclick="showPackageDetailsEnhanced(${pkg.id})">
+            <div class="card-image">
+                ${pkg.emoji} ${pkg.destination}
+                <div class="card-overlay">
+                    <button class="btn btn--outline">🎁 View Package</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">${pkg.emoji} ${pkg.name}</h3>
+                <div class="card-price">💰 $${pkg.price}</div>
+                <div class="card-duration">⏰ ${pkg.duration}</div>
+                <p class="card-description">${pkg.highlights}</p>
+                <div class="card-actions">
+                    <button class="btn btn--secondary" onclick="event.stopPropagation(); bookPackageEnhanced(${pkg.id})">
+                        ✨ Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    addCardHoverEffects();
 }
 
-function loadTestimonials() {
+// Enhanced testimonials with animations
+function loadTestimonialsEnhanced() {
     const container = document.getElementById('testimonials');
     if (!container) return;
-
-    container.innerHTML = appData.testimonials.map(testimonial => createTestimonialCard(testimonial)).join('');
-}
-
-function loadAllDestinations() {
-    const container = document.getElementById('all-destinations');
-    if (!container) return;
-
-    renderDestinations(filteredDestinations);
-}
-
-function loadAllPackages() {
-    const container = document.getElementById('all-packages');
-    if (!container) return;
-
-    renderPackages(filteredPackages);
-}
-
-// Card creation functions
-function createDestinationCard(destination) {
-    return `
-        <div class="destination-card" onclick="showDestinationDetails(${destination.id})">
-            <div class="card-image">
-                <span>📍 ${destination.name}</span>
-            </div>
-            <div class="card-content">
-                <h3>${destination.name}</h3>
-                <p>${destination.description}</p>
-                <button class="btn btn--primary btn--sm">Learn More</button>
-            </div>
-        </div>
-    `;
-}
-
-function createPackageCard(pkg) {
-    return `
-        <div class="package-card">
-            <div class="card-image">
-                <span>🎒 ${pkg.destination}</span>
-            </div>
-            <div class="card-content">
-                <div class="package-type">${pkg.type}</div>
-                <h3>${pkg.name}</h3>
-                <div class="package-price">$${pkg.price}</div>
-                <div class="package-duration">${pkg.duration}</div>
-                <p>${pkg.highlights}</p>
-                <ul class="highlights-list">
-                    ${pkg.inclusions.slice(0, 3).map(item => `<li>${item}</li>`).join('')}
-                </ul>
-                <button class="btn btn--primary btn--full-width" onclick="showBookingModal(${pkg.id})">Book Now</button>
-            </div>
-        </div>
-    `;
-}
-
-function createTestimonialCard(testimonial) {
-    const stars = '★'.repeat(testimonial.rating) + '☆'.repeat(5 - testimonial.rating);
     
-    return `
-        <div class="testimonial-card">
-            <div class="testimonial-rating">${stars}</div>
-            <div class="testimonial-comment">"${testimonial.comment}"</div>
-            <div class="testimonial-author">${testimonial.name}</div>
-            <div class="testimonial-location">${testimonial.location}</div>
+    container.innerHTML = appData.testimonials.map((testimonial, index) => `
+        <div class="testimonial-card fade-in" style="animation-delay: ${index * 0.3}s">
+            <div class="testimonial-rating">
+                ${'⭐'.repeat(testimonial.rating)}
+            </div>
+            <p class="testimonial-comment">${testimonial.comment}</p>
+            <div class="testimonial-author">${testimonial.emoji} ${testimonial.name}</div>
+            <div class="testimonial-location">📍 ${testimonial.location}</div>
         </div>
-    `;
+    `).join('');
 }
 
-// Filter functions
-function filterDestinations() {
-    const searchTerm = document.getElementById('destination-search').value.toLowerCase();
-    const activeFilter = document.querySelector('.filter-btn.active').getAttribute('data-filter');
-    
-    filteredDestinations = appData.destinations.filter(destination => {
-        const matchesSearch = destination.name.toLowerCase().includes(searchTerm) || 
-                            destination.description.toLowerCase().includes(searchTerm);
-        const matchesFilter = activeFilter === 'all' || destination.region.toLowerCase() === activeFilter;
+// Enhanced card hover effects
+function addCardHoverEffects() {
+    document.querySelectorAll('.card').forEach(card => {
+        card.addEventListener('mouseenter', function() {
+            this.style.transform = 'translateY(-10px) scale(1.02)';
+            this.style.boxShadow = '0 20px 40px rgba(0,0,0,0.25)';
+        });
         
-        return matchesSearch && matchesFilter;
+        card.addEventListener('mouseleave', function() {
+            this.style.transform = 'translateY(0) scale(1)';
+            this.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+        });
     });
-    
-    renderDestinations(filteredDestinations);
 }
 
-function filterDestinationsByRegion(region) {
-    const searchTerm = document.getElementById('destination-search')?.value.toLowerCase() || '';
+// Enhanced form handlers with better feedback
+function handleQuickInquiryEnhanced(e) {
+    e.preventDefault();
     
-    filteredDestinations = appData.destinations.filter(destination => {
-        const matchesSearch = destination.name.toLowerCase().includes(searchTerm) || 
-                            destination.description.toLowerCase().includes(searchTerm);
-        const matchesFilter = region === 'all' || destination.region.toLowerCase() === region;
-        
-        return matchesSearch && matchesFilter;
-    });
+    const formData = new FormData(e.target);
+    const destination = document.getElementById('destination-input').value;
+    const travelDate = document.getElementById('travel-date').value;
+    const travelers = document.getElementById('travelers').value;
     
-    renderDestinations(filteredDestinations);
+    // Add loading state
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '⏳ Processing...';
+    submitBtn.disabled = true;
+    
+    // Simulate API call
+    setTimeout(() => {
+        showMessageEnhanced(
+            `🎉 Thank you for your inquiry! Our travel experts will contact you within 2 hours with a personalized quote for ${destination}.`, 
+            'success'
+        );
+        e.target.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }, 2000);
 }
 
-function filterPackages() {
-    const searchTerm = document.getElementById('package-search')?.value.toLowerCase() || '';
-    const priceFilter = document.getElementById('price-filter')?.value || 'all';
-    const typeFilter = document.getElementById('type-filter')?.value || 'all';
+function handleContactFormEnhanced(e) {
+    e.preventDefault();
     
-    filteredPackages = appData.packages.filter(pkg => {
-        const matchesSearch = pkg.name.toLowerCase().includes(searchTerm) || 
-                            pkg.destination.toLowerCase().includes(searchTerm);
-        
-        let matchesPrice = true;
-        if (priceFilter !== 'all') {
-            if (priceFilter === '0-800') {
-                matchesPrice = pkg.price <= 800;
-            } else if (priceFilter === '800-1200') {
-                matchesPrice = pkg.price > 800 && pkg.price <= 1200;
-            } else if (priceFilter === '1200+') {
-                matchesPrice = pkg.price > 1200;
-            }
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    
+    // Add loading state
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '⏳ Sending...';
+    submitBtn.disabled = true;
+    
+    // Simulate form submission
+    setTimeout(() => {
+        showMessageEnhanced('🎊 Message sent successfully! We will get back to you within 24 hours.', 'success');
+        e.target.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }, 1500);
+}
+
+function handleBookingFormEnhanced(e) {
+    e.preventDefault();
+    
+    const formData = new FormData(e.target);
+    const data = Object.fromEntries(formData);
+    const packageId = data.packageId;
+    const pkg = appData.packages.find(p => p.id == packageId);
+    
+    // Add loading state
+    const submitBtn = e.target.querySelector('button[type="submit"]');
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '⏳ Processing Booking...';
+    submitBtn.disabled = true;
+    
+    // Simulate booking
+    setTimeout(() => {
+        showMessageEnhanced(`🎉 Booking confirmed for ${pkg.name}! Booking reference: TRI${Date.now().toString().slice(-6)}`, 'success');
+        closeModal('booking-modal');
+        e.target.reset();
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+    }, 2500);
+}
+
+// Enhanced message system with better styling
+function showMessageEnhanced(message, type = 'success') {
+    const container = document.getElementById('message-container');
+    if (!container) return;
+    
+    const messageDiv = document.createElement('div');
+    messageDiv.className = `message ${type} slide-up`;
+    messageDiv.innerHTML = `
+        <div class="message-content">
+            ${type === 'success' ? '✅' : '❌'} ${message}
+            <button class="message-close" onclick="this.parentElement.parentElement.remove()">×</button>
+        </div>
+    `;
+    
+    container.appendChild(messageDiv);
+    
+    // Auto remove after 6 seconds
+    setTimeout(() => {
+        if (messageDiv.parentNode) {
+            messageDiv.style.opacity = '0';
+            messageDiv.style.transform = 'translateX(100%)';
+            setTimeout(() => {
+                if (messageDiv.parentNode) {
+                    messageDiv.parentNode.removeChild(messageDiv);
+                }
+            }, 300);
         }
-        
-        const matchesType = typeFilter === 'all' || pkg.type.toLowerCase() === typeFilter;
-        
-        return matchesSearch && matchesPrice && matchesType;
-    });
+    }, 6000);
+}
+
+// Enhanced destinations loading
+function loadDestinationsEnhanced() {
+    const container = document.getElementById('destinations-grid');
+    if (!container) return;
     
-    renderPackages(filteredPackages);
-}
-
-function renderDestinations(destinations) {
-    const container = document.getElementById('all-destinations');
-    if (!container) return;
-
-    if (destinations.length === 0) {
-        container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-                <p style="color: var(--color-text-secondary); font-size: var(--font-size-lg);">
-                    No destinations found matching your criteria.
-                </p>
+    container.innerHTML = currentDestinations.map((destination, index) => `
+        <div class="card fade-in" style="animation-delay: ${index * 0.1}s" onclick="showDestinationDetailsEnhanced(${destination.id})">
+            <div class="card-image">
+                ${destination.emoji} ${destination.name}
+                <div class="card-overlay">
+                    <button class="btn btn--outline">✨ Learn More</button>
+                </div>
             </div>
-        `;
-        return;
-    }
-
-    container.innerHTML = destinations.map(destination => createDestinationCard(destination)).join('');
-}
-
-function renderPackages(packages) {
-    const container = document.getElementById('all-packages');
-    if (!container) return;
-
-    if (packages.length === 0) {
-        container.innerHTML = `
-            <div style="grid-column: 1 / -1; text-align: center; padding: 2rem;">
-                <p style="color: var(--color-text-secondary); font-size: var(--font-size-lg);">
-                    No packages found matching your criteria.
-                </p>
+            <div class="card-content">
+                <h3 class="card-title">${destination.emoji} ${destination.name}</h3>
+                <p class="card-description">${destination.description}</p>
+                <div class="card-highlights">
+                    ${destination.highlights.map(highlight => 
+                        `<span class="highlight-tag">${highlight}</span>`
+                    ).join('')}
+                </div>
             </div>
-        `;
-        return;
-    }
-
-    container.innerHTML = packages.map(pkg => createPackageCard(pkg)).join('');
+        </div>
+    `).join('');
+    
+    addCardHoverEffects();
 }
 
-// Modal functions
-function showDestinationDetails(destinationId) {
+// Enhanced packages loading
+function loadPackagesEnhanced() {
+    const container = document.getElementById('packages-grid');
+    if (!container) return;
+    
+    container.innerHTML = currentPackages.map((pkg, index) => `
+        <div class="card fade-in" style="animation-delay: ${index * 0.1}s">
+            <div class="card-image">
+                ${pkg.emoji} ${pkg.destination}
+                <div class="card-overlay">
+                    <button class="btn btn--outline">🎁 View Details</button>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">${pkg.emoji} ${pkg.name}</h3>
+                <div class="card-price">💰 $${pkg.price}</div>
+                <div class="card-duration">⏰ ${pkg.duration}</div>
+                <p class="card-description">${pkg.highlights}</p>
+                <div class="card-highlights">
+                    <span class="highlight-tag">${pkg.type}</span>
+                </div>
+                <div style="margin-top: 1rem; display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <button class="btn btn--primary" onclick="showPackageDetailsEnhanced(${pkg.id})" style="flex: 1;">
+                        📋 View Details
+                    </button>
+                    <button class="btn btn--secondary" onclick="bookPackageEnhanced(${pkg.id})" style="flex: 1;">
+                        ✨ Book Now
+                    </button>
+                </div>
+            </div>
+        </div>
+    `).join('');
+    
+    addCardHoverEffects();
+}
+
+// Enhanced destination details modal
+function showDestinationDetailsEnhanced(destinationId) {
     const destination = appData.destinations.find(d => d.id === destinationId);
     if (!destination) return;
-
-    document.getElementById('modal-destination-name').textContent = destination.name;
-    document.getElementById('modal-destination-description').textContent = destination.description;
     
-    const highlightsList = document.getElementById('modal-destination-highlights');
-    highlightsList.innerHTML = destination.highlights.map(highlight => `<li>${highlight}</li>`).join('');
+    const modalContent = document.getElementById('destination-modal-content');
+    modalContent.innerHTML = `
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h2>${destination.emoji} ${destination.name}</h2>
+            <div class="card-image" style="margin: 1rem 0; border-radius: 12px;">
+                ${destination.emoji} ${destination.name}
+            </div>
+        </div>
+        <p style="margin-bottom: 1.5rem; font-size: 1.1rem; line-height: 1.7;">${destination.description}</p>
+        <h3 style="color: var(--primary-color); margin-bottom: 1rem;">🌟 Highlights:</h3>
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 0.5rem; margin-bottom: 2rem;">
+            ${destination.highlights.map(highlight => `
+                <div style="background: var(--bg-primary); padding: 0.75rem; border-radius: 8px; text-align: center;">
+                    ${highlight}
+                </div>
+            `).join('')}
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+            <button class="btn btn--primary" onclick="closeModal('destination-modal'); showSection('packages');">
+                🎁 View Packages for ${destination.name}
+            </button>
+            <button class="btn btn--outline" onclick="closeModal('destination-modal');">❌ Close</button>
+        </div>
+    `;
     
     showModal('destination-modal');
 }
 
-function showBookingModal(packageId) {
+// Enhanced package details modal
+function showPackageDetailsEnhanced(packageId) {
     const pkg = appData.packages.find(p => p.id === packageId);
     if (!pkg) return;
-
-    const packageDetails = document.getElementById('package-details');
-    packageDetails.innerHTML = `
-        <div class="card" style="margin-bottom: var(--space-16);">
-            <div class="card__body">
-                <h4>${pkg.name}</h4>
-                <div class="package-price">$${pkg.price}</div>
-                <div class="package-duration">${pkg.duration}</div>
-                <div class="package-type">${pkg.type}</div>
+    
+    const modalContent = document.getElementById('package-modal-content');
+    modalContent.innerHTML = `
+        <div style="text-align: center; margin-bottom: 2rem;">
+            <h2>${pkg.emoji} ${pkg.name}</h2>
+            <div class="card-image" style="margin: 1rem 0; border-radius: 12px;">
+                ${pkg.emoji} ${pkg.destination}
             </div>
         </div>
+        <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin: 1.5rem 0; background: var(--bg-primary); padding: 1.5rem; border-radius: 12px;">
+            <div><strong>💰 Price:</strong> $${pkg.price}</div>
+            <div><strong>⏰ Duration:</strong> ${pkg.duration}</div>
+            <div><strong>🎯 Type:</strong> ${pkg.type}</div>
+            <div><strong>📍 Destination:</strong> ${pkg.destination}</div>
+        </div>
+        <p style="margin: 1.5rem 0; font-size: 1.1rem; line-height: 1.7;">${pkg.highlights}</p>
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin: 2rem 0;">
+            <div>
+                <h4 style="color: var(--success-color); margin-bottom: 1rem;">✅ Inclusions:</h4>
+                <ul style="list-style: none; padding: 0;">
+                    ${pkg.inclusions.map(item => `<li style="margin-bottom: 0.5rem; padding: 0.5rem; background: rgba(16, 216, 118, 0.1); border-radius: 6px;">${item}</li>`).join('')}
+                </ul>
+            </div>
+            <div>
+                <h4 style="color: var(--secondary-color); margin-bottom: 1rem;">❌ Exclusions:</h4>
+                <ul style="list-style: none; padding: 0;">
+                    ${pkg.exclusions.map(item => `<li style="margin-bottom: 0.5rem; padding: 0.5rem; background: rgba(245, 87, 108, 0.1); border-radius: 6px;">${item}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+        <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center; margin-top: 2rem;">
+            <button class="btn btn--primary" onclick="closeModal('package-modal'); bookPackageEnhanced(${pkg.id});">
+                ✨ Book This Package
+            </button>
+            <button class="btn btn--outline" onclick="closeModal('package-modal');">❌ Close</button>
+        </div>
     `;
-
-    // Store package ID for form submission
-    document.getElementById('booking-form').setAttribute('data-package-id', packageId);
     
+    showModal('package-modal');
+}
+
+// Enhanced booking function
+function bookPackageEnhanced(packageId) {
+    const pkg = appData.packages.find(p => p.id === packageId);
+    if (!pkg) return;
+    
+    document.getElementById('booking-package-id').value = packageId;
     showModal('booking-modal');
 }
 
+// Enhanced filter listeners
+function setupFilterListenersEnhanced() {
+    // Destination filters
+    document.querySelectorAll('[data-region]').forEach(button => {
+        button.addEventListener('click', function() {
+            const region = this.getAttribute('data-region');
+            filterDestinationsEnhanced(region);
+            
+            // Update active state with animation
+            document.querySelectorAll('[data-region]').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            addRippleEffect(this);
+        });
+    });
+    
+    // Package filters
+    document.querySelectorAll('[data-type]').forEach(button => {
+        button.addEventListener('click', function() {
+            const type = this.getAttribute('data-type');
+            filterPackagesEnhanced(type);
+            
+            // Update active state with animation
+            document.querySelectorAll('[data-type]').forEach(btn => btn.classList.remove('active'));
+            this.classList.add('active');
+            addRippleEffect(this);
+        });
+    });
+}
+
+// Enhanced filter functions
+function filterDestinationsEnhanced(region) {
+    if (region === 'all') {
+        currentDestinations = [...appData.destinations];
+    } else {
+        currentDestinations = appData.destinations.filter(dest => dest.region === region);
+    }
+    loadDestinationsEnhanced();
+}
+
+function filterPackagesEnhanced(type) {
+    if (type === 'all') {
+        currentPackages = [...appData.packages];
+    } else {
+        currentPackages = appData.packages.filter(pkg => pkg.type === type);
+    }
+    loadPackagesEnhanced();
+}
+
+// Enhanced search functions
+function searchDestinations() {
+    const searchInput = document.getElementById('destination-search');
+    if (!searchInput) return;
+    
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    if (searchTerm.trim() === '') {
+        currentDestinations = [...appData.destinations];
+    } else {
+        currentDestinations = appData.destinations.filter(destination =>
+            destination.name.toLowerCase().includes(searchTerm) ||
+            destination.description.toLowerCase().includes(searchTerm) ||
+            destination.highlights.some(highlight => highlight.toLowerCase().includes(searchTerm))
+        );
+    }
+    
+    loadDestinationsEnhanced();
+}
+
+function searchPackages() {
+    const searchInput = document.getElementById('package-search');
+    if (!searchInput) return;
+    
+    const searchTerm = searchInput.value.toLowerCase();
+    
+    if (searchTerm.trim() === '') {
+        currentPackages = [...appData.packages];
+    } else {
+        currentPackages = appData.packages.filter(pkg =>
+            pkg.name.toLowerCase().includes(searchTerm) ||
+            pkg.destination.toLowerCase().includes(searchTerm) ||
+            pkg.highlights.toLowerCase().includes(searchTerm)
+        );
+    }
+    
+    loadPackagesEnhanced();
+}
+
+function filterByPrice() {
+    const priceRange = document.getElementById('price-range');
+    const priceValue = document.getElementById('price-value');
+    
+    if (priceRange && priceValue) {
+        const maxPrice = parseInt(priceRange.value);
+        priceValue.textContent = `0-${maxPrice}`;
+        
+        currentPackages = appData.packages.filter(pkg => pkg.price <= maxPrice);
+        loadPackagesEnhanced();
+    }
+}
+
+// Modal functions
 function showModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
-        modal.classList.remove('hidden');
+        modal.classList.add('active');
         document.body.style.overflow = 'hidden';
-        
-        // Focus first input if it exists
-        const firstInput = modal.querySelector('input, select, textarea');
-        if (firstInput) {
-            setTimeout(() => firstInput.focus(), 100);
-        }
     }
 }
 
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
-        modal.classList.add('hidden');
+        modal.classList.remove('active');
         document.body.style.overflow = '';
     }
 }
 
-// Form handling functions
-function handleQuickInquiry(e) {
-    e.preventDefault();
-    
-    const form = e.target;
-    const formData = new FormData(form);
-    
-    // Add loading state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    // Simulate API call
-    setTimeout(() => {
-        showSuccessMessage('Thank you for your inquiry! We will contact you within 24 hours with a customized quote.');
-        form.reset();
+// Close modal when clicking outside
+document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('modal')) {
+        e.target.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+});
+
+// Add scroll effects and animations
+function addScrollEffects() {
+    window.addEventListener('scroll', function() {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.classList.add('scrolled');
+        } else {
+            navbar.classList.remove('scrolled');
+        }
         
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 1500);
+        // Add parallax effect to hero
+        const hero = document.querySelector('.hero');
+        if (hero) {
+            const scrolled = window.pageYOffset;
+            hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+        }
+    });
 }
 
-function handleContactForm(e) {
-    e.preventDefault();
+// Intersection Observer for animations
+function addIntersectionObserver() {
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('animate-in');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    });
     
-    const form = e.target;
-    const formData = new FormData(form);
-    
-    // Add loading state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Sending...';
-    submitBtn.disabled = true;
-    
-    // Simulate API call
-    setTimeout(() => {
-        showSuccessMessage('Thank you for contacting us! We will respond to your message within 24 hours.');
-        form.reset();
-        
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 1500);
+    // Observe all sections
+    document.querySelectorAll('.section').forEach(section => {
+        observer.observe(section);
+    });
 }
 
-function handleBookingForm(e) {
-    e.preventDefault();
+// Add search event listeners with debounce
+document.addEventListener('DOMContentLoaded', function() {
+    const destinationSearch = document.getElementById('destination-search');
+    const packageSearch = document.getElementById('package-search');
     
-    const form = e.target;
-    const formData = new FormData(form);
-    const packageId = form.getAttribute('data-package-id');
-    const pkg = appData.packages.find(p => p.id == packageId);
+    if (destinationSearch) {
+        destinationSearch.addEventListener('input', debounce(searchDestinations, 300));
+    }
     
-    // Add loading state
-    const submitBtn = form.querySelector('button[type="submit"]');
-    const originalText = submitBtn.textContent;
-    submitBtn.textContent = 'Processing...';
-    submitBtn.disabled = true;
-    
-    // Simulate API call
-    setTimeout(() => {
-        closeModal('booking-modal');
-        showSuccessMessage(`Your booking request for "${pkg.name}" has been submitted successfully! Our team will contact you within 24 hours to confirm your booking.`);
-        form.reset();
-        
-        // Reset button
-        submitBtn.textContent = originalText;
-        submitBtn.disabled = false;
-    }, 2000);
-}
-
-function showSuccessMessage(message) {
-    document.getElementById('success-message').textContent = message;
-    showModal('success-modal');
-}
+    if (packageSearch) {
+        packageSearch.addEventListener('input', debounce(searchPackages, 300));
+    }
+});
 
 // Utility functions
 function debounce(func, wait) {
@@ -635,136 +845,64 @@ function debounce(func, wait) {
     };
 }
 
-// Make functions globally available
-window.showSection = showSection;
-window.showDestinationDetails = showDestinationDetails;
-window.showBookingModal = showBookingModal;
-window.closeModal = closeModal;
-
-// Smooth scrolling for internal links
-document.addEventListener('click', (e) => {
-    if (e.target.tagName === 'A' && e.target.getAttribute('href')?.startsWith('#')) {
-        e.preventDefault();
-        const targetId = e.target.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        
-        if (targetElement) {
-            targetElement.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start'
-            });
-        }
-    }
-});
-
-// Add scroll effects
-window.addEventListener('scroll', debounce(() => {
-    const navbar = document.querySelector('.navbar');
-    if (window.scrollY > 50) {
-        navbar.style.backgroundColor = 'rgba(var(--color-surface-rgb, 255, 255, 253), 0.95)';
-    } else {
-        navbar.style.backgroundColor = 'var(--color-surface)';
-    }
-}, 10));
-
-// Add intersection observer for animations
-const observerOptions = {
-    threshold: 0.1,
-    rootMargin: '0px 0px -50px 0px'
-};
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.style.opacity = '1';
-            entry.target.style.transform = 'translateY(0)';
-        }
-    });
-}, observerOptions);
-
-// Observe cards for animation
-document.addEventListener('DOMContentLoaded', () => {
-    setTimeout(() => {
-        const cards = document.querySelectorAll('.destination-card, .package-card, .testimonial-card, .feature-card, .stat-card');
-        cards.forEach(card => {
-            card.style.opacity = '0';
-            card.style.transform = 'translateY(30px)';
-            card.style.transition = 'opacity 0.6s ease-out, transform 0.6s ease-out';
-            observer.observe(card);
-        });
-    }, 100);
-});
-
-// Performance optimization: lazy load content
-function lazyLoadImages() {
-    const images = document.querySelectorAll('img[data-src]');
-    
-    const imageObserver = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const img = entry.target;
-                img.src = img.dataset.src;
-                img.removeAttribute('data-src');
-                imageObserver.unobserve(img);
-            }
-        });
-    });
-
-    images.forEach(img => imageObserver.observe(img));
+// Update main functions to use enhanced versions
+function showSection(sectionName) {
+    showSectionWithTransition(sectionName);
 }
 
-// Error handling for forms
-function handleFormErrors(form, errors) {
-    // Remove existing error messages
-    const existingErrors = form.querySelectorAll('.error-message');
-    existingErrors.forEach(error => error.remove());
+function loadFeaturedContent() {
+    loadFeaturedDestinationsEnhanced();
+    loadFeaturedPackagesEnhanced();
+    loadTestimonialsEnhanced();
+}
 
-    // Add new error messages
-    errors.forEach(error => {
-        const field = form.querySelector(`[name="${error.field}"]`);
-        if (field) {
-            const errorElement = document.createElement('div');
-            errorElement.className = 'error-message';
-            errorElement.textContent = error.message;
-            errorElement.style.color = 'var(--color-error)';
-            errorElement.style.fontSize = 'var(--font-size-sm)';
-            errorElement.style.marginTop = 'var(--space-4)';
+function showMessage(message, type) {
+    showMessageEnhanced(message, type);
+}
+
+// Setup navigation functions
+function setupNavigation() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    
+    navLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
             
-            field.parentNode.appendChild(errorElement);
-            field.style.borderColor = 'var(--color-error)';
-        }
+            // Remove active class from all links
+            navLinks.forEach(l => l.classList.remove('active'));
+            
+            // Add active class to clicked link
+            this.classList.add('active');
+            
+            // Show corresponding section
+            const section = this.getAttribute('data-section');
+            showSection(section);
+        });
     });
 }
 
-// Form validation
-function validateForm(form) {
-    const errors = [];
-    const requiredFields = form.querySelectorAll('[required]');
+function setupMobileMenu() {
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
     
-    requiredFields.forEach(field => {
-        if (!field.value.trim()) {
-            errors.push({
-                field: field.name,
-                message: 'This field is required'
+    if (navToggle && navMenu) {
+        navToggle.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Close menu when clicking on a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', function() {
+                navMenu.classList.remove('active');
             });
-        }
-    });
-
-    // Email validation
-    const emailFields = form.querySelectorAll('input[type="email"]');
-    emailFields.forEach(field => {
-        if (field.value && !isValidEmail(field.value)) {
-            errors.push({
-                field: field.name,
-                message: 'Please enter a valid email address'
-            });
-        }
-    });
-
-    return errors;
+        });
+    }
 }
 
-function isValidEmail(email) {
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return emailRegex.test(email);
-}
+// Export functions for global access
+window.showSection = showSection;
+window.showMessage = showMessage;
+window.closeModal = closeModal;
+window.searchDestinations = searchDestinations;
+window.searchPackages = searchPackages;
+window.filterByPrice = filterByPrice;
