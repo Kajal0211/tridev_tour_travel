@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tridev Travel Agency - Your Journey Begins Here</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <h2>Tridev Travel</h2>
+                <span>Your Journey Begins Here</span>
+            </div>
+            <div class="nav-menu" id="nav-menu">
+                <a href="#" class="nav-link active" data-section="home">Home</a>
+                <a href="#" class="nav-link" data-section="destinations">Destinations</a>
+                <a href="#" class="nav-link" data-section="packages">Packages</a>
+                <a href="#" class="nav-link" data-section="about">About</a>
+                <a href="#" class="nav-link" data-section="contact">Contact</a>
+            </div>
+            <div class="nav-toggle" id="nav-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        
+        <!-- Home Section -->
+        <section id="home" class="section active">
+            <!-- Hero Section -->
+            <div class="hero">
+                <div class="hero-content">
+                    <h1>Discover Amazing Destinations</h1>
+                    <p>Experience the world with Tridev Travel Agency. From exotic beaches to cultural wonders, we create unforgettable journeys.</p>
+                    <div class="hero-actions">
+                        <button class="btn btn--primary btn--lg" onclick="showSection('destinations')">Explore Destinations</button>
+                        <button class="btn btn--outline btn--lg" onclick="showSection('packages')">View Packages</button>
+                    </div>
+                </div>
+                <div class="hero-form">
+                    <div class="card">
+                        <div class="card__body">
+                            <h3>Quick Inquiry</h3>
+                            <form id="quick-inquiry-form">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Your Name" required>
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" class="form-control" placeholder="Email Address" required>
+                                </div>
+                                <div class="form-group">
+                                    <select class="form-control">
+                                        <option value="">Select Destination</option>
+                                        <option value="kerala">Kerala</option>
+                                        <option value="rajasthan">Rajasthan</option>
+                                        <option value="goa">Goa</option>
+                                        <option value="dubai">Dubai</option>
+                                        <option value="thailand">Thailand</option>
+                                        <option value="singapore">Singapore</option>
+                                    </select>
+                                </div>
+                                <button type="submit" class="btn btn--primary btn--full-width">Get Quote</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Destinations -->
+            <div class="section-content">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Featured Destinations</h2>
+                        <p>Explore our most popular travel destinations</p>
+                    </div>
+                    <div class="destinations-grid" id="featured-destinations">
+                        <!-- Destinations will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Packages -->
+            <div class="section-content">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>Featured Packages</h2>
+                        <p>Handpicked travel packages for every budget</p>
+                    </div>
+                    <div class="packages-grid" id="featured-packages">
+                        <!-- Packages will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="section-content" style="background: var(--color-bg-1);">
+                <div class="container">
+                    <div class="section-header">
+                        <h2>What Our Customers Say</h2>
+                        <p>Real experiences from happy travelers</p>
+                    </div>
+                    <div class="testimonials-grid" id="testimonials">
+                        <!-- Testimonials will be loaded here -->
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Destinations Section -->
+        <section id="destinations" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Our Destinations</h1>
+                    <p>Discover amazing places around the world</p>
+                </div>
+                
+                <div class="filters-search">
+                    <div class="search-bar">
+                        <input type="text" id="destination-search" class="form-control" placeholder="Search destinations...">
+                    </div>
+                    <div class="filter-buttons">
+                        <button class="btn btn--secondary filter-btn active" data-filter="all">All Regions</button>
+                        <button class="btn btn--secondary filter-btn" data-filter="asia">Asia</button>
+                        <button class="btn btn--secondary filter-btn" data-filter="europe">Europe</button>
+                        <button class="btn btn--secondary filter-btn" data-filter="america">America</button>
+                    </div>
+                </div>
+
+                <div class="destinations-grid" id="all-destinations">
+                    <!-- All destinations will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Packages Section -->
+        <section id="packages" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Travel Packages</h1>
+                    <p>Choose from our carefully crafted travel packages</p>
+                </div>
+                
+                <div class="filters-search">
+                    <div class="search-bar">
+                        <input type="text" id="package-search" class="form-control" placeholder="Search packages...">
+                    </div>
+                    <div class="filter-group">
+                        <select id="price-filter" class="form-control">
+                            <option value="all">All Prices</option>
+                            <option value="0-800">Under $800</option>
+                            <option value="800-1200">$800 - $1200</option>
+                            <option value="1200+">Above $1200</option>
+                        </select>
+                        <select id="type-filter" class="form-control">
+                            <option value="all">All Types</option>
+                            <option value="cultural">Cultural</option>
+                            <option value="adventure">Adventure</option>
+                            <option value="luxury">Luxury</option>
+                            <option value="beach">Beach</option>
+                            <option value="city">City</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="packages-grid" id="all-packages">
+                    <!-- All packages will be loaded here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>About Tridev Travel Agency</h1>
+                    <p>Your trusted partner in creating unforgettable journeys</p>
+                </div>
+
+                <div class="about-content">
+                    <div class="about-story">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Our Story</h3>
+                                <p>Since 2015, Tridev Travel Agency has been dedicated to providing exceptional travel experiences that create lasting memories for our clients. We believe that travel is not just about reaching a destination, but about the journey, the experiences, and the memories you create along the way.</p>
+                                <p>With over 9 years of experience in the travel industry, we have helped thousands of travelers explore the world with confidence and comfort.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="company-stats">
+                        <div class="stats-grid">
+                            <div class="stat-card">
+                                <div class="stat-number">9+</div>
+                                <div class="stat-label">Years Experience</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">50+</div>
+                                <div class="stat-label">Destinations</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">5000+</div>
+                                <div class="stat-label">Happy Customers</div>
+                            </div>
+                            <div class="stat-card">
+                                <div class="stat-number">100%</div>
+                                <div class="stat-label">Satisfaction</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="why-choose-us">
+                        <h3>Why Choose Us?</h3>
+                        <div class="features-grid">
+                            <div class="feature-card">
+                                <h4>Expert Planning</h4>
+                                <p>Our experienced team crafts personalized itineraries tailored to your preferences and budget.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Best Prices</h4>
+                                <p>We negotiate the best deals with hotels, airlines, and local partners to offer you competitive prices.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>24/7 Support</h4>
+                                <p>Our dedicated support team is available round the clock to assist you during your journey.</p>
+                            </div>
+                            <div class="feature-card">
+                                <h4>Local Expertise</h4>
+                                <p>We have local partners and guides who provide authentic experiences and insider knowledge.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>Get In Touch</h1>
+                    <p>Ready to start your journey? Contact us today!</p>
+                </div>
+
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Contact Information</h3>
+                                <div class="contact-item">
+                                    <strong>Phone:</strong> +91-9876543210
+                                </div>
+                                <div class="contact-item">
+                                    <strong>Email:</strong> info@tridevtravel.com
+                                </div>
+                                <div class="contact-item">
+                                    <strong>Address:</strong> 123 Travel Street, Rudrapur, Uttarakhand, India
+                                </div>
+                                <div class="contact-item">
+                                    <strong>Business Hours:</strong><br>
+                                    Monday - Saturday: 9:00 AM - 8:00 PM<br>
+                                    Sunday: 10:00 AM - 6:00 PM
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="contact-form">
+                        <div class="card">
+                            <div class="card__body">
+                                <h3>Send us a Message</h3>
+                                <form id="contact-form">
+                                    <div class="form-group">
+                                        <label class="form-label">Full Name</label>
+                                        <input type="text" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Email Address</label>
+                                        <input type="email" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Phone Number</label>
+                                        <input type="tel" class="form-control" required>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Subject</label>
+                                        <select class="form-control" required>
+                                            <option value="">Select Subject</option>
+                                            <option value="inquiry">General Inquiry</option>
+                                            <option value="booking">Package Booking</option>
+                                            <option value="custom">Custom Tour</option>
+                                            <option value="support">Support</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label class="form-label">Message</label>
+                                        <textarea class="form-control" rows="5" required></textarea>
+                                    </div>
+                                    <button type="submit" class="btn btn--primary btn--full-width">Send Message</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modals -->
+    <!-- Destination Detail Modal -->
+    <div id="destination-modal" class="modal hidden">
+        <div class="modal-overlay" onclick="closeModal('destination-modal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 id="modal-destination-name"></h3>
+                <button class="modal-close" onclick="closeModal('destination-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <p id="modal-destination-description"></p>
+                <h4>Highlights:</h4>
+                <ul id="modal-destination-highlights"></ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Package Booking Modal -->
+    <div id="booking-modal" class="modal hidden">
+        <div class="modal-overlay" onclick="closeModal('booking-modal')"></div>
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3>Book Package</h3>
+                <button class="modal-close" onclick="closeModal('booking-modal')">&times;</button>
+            </div>
+            <div class="modal-body">
+                <form id="booking-form">
+                    <div id="package-details"></div>
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <input type="text" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Email</label>
+                        <input type="email" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Phone</label>
+                        <input type="tel" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Number of Travelers</label>
+                        <select class="form-control" required>
+                            <option value="1">1 Person</option>
+                            <option value="2">2 People</option>
+                            <option value="3">3 People</option>
+                            <option value="4">4 People</option>
+                            <option value="5+">5+ People</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Travel Date</label>
+                        <input type="date" class="form-control" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Special Requests</label>
+                        <textarea class="form-control" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--full-width">Submit Booking Request</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Success Message Modal -->
+    <div id="success-modal" class="modal hidden">
+        <div class="modal-overlay" onclick="closeModal('success-modal')"></div>
+        <div class="modal-content">
+            <div class="modal-body text-center">
+                <div class="success-icon">✓</div>
+                <h3>Success!</h3>
+                <p id="success-message"></p>
+                <button class="btn btn--primary" onclick="closeModal('success-modal')">Close</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Tridev Travel Agency</h4>
+                    <p>Your Journey Begins Here</p>
+                    <div class="social-links">
+                        <a href="https://facebook.com/tridevtravel" target="_blank">Facebook</a>
+                        <a href="https://instagram.com/tridevtravel" target="_blank">Instagram</a>
+                        <a href="https://twitter.com/tridevtravel" target="_blank">Twitter</a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="#" onclick="showSection('home')">Home</a>
+                    <a href="#" onclick="showSection('destinations')">Destinations</a>
+                    <a href="#" onclick="showSection('packages')">Packages</a>
+                    <a href="#" onclick="showSection('about')">About</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Contact</h4>
+                    <p>123 Travel Street<br>Rudrapur, Uttarakhand</p>
+                    <p>Phone: +91-9876543210</p>
+                    <p>Email: info@tridevtravel.com</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Tridev Travel Agency. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
