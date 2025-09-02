@@ -210,6 +210,15 @@ function setupEventListeners() {
         bookingForm.addEventListener('submit', handleBookingFormEnhanced);
     }
 
+   const taxiForm = document.getElementById('taxi-form');
+    if (taxiForm) {
+      taxiForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        document.getElementById('taxi-success').innerHTML =
+          '<div class="message success">🚗 Taxi Booked! You will receive confirmation soon.</div>';
+        taxiForm.reset();
+      });
+    }
     // Enhanced filters with animations
     setupFilterListenersEnhanced();
 }
