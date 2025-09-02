@@ -1,4 +1,3 @@
-```javascript
 // Enhanced Application data with emojis and better descriptions
 const appData = {
   "destinations": [
@@ -161,10 +160,12 @@ const appData = {
     }
   ]
 };
+
 // Enhanced global variables
 let currentDestinations = [...appData.destinations];
 let currentPackages = [...appData.packages];
 let isLoading = false;
+
 // Initialize the application with enhanced effects
 document.addEventListener('DOMContentLoaded', function() {
     initializeApp();
@@ -173,6 +174,7 @@ document.addEventListener('DOMContentLoaded', function() {
     addScrollEffects();
     addIntersectionObserver();
 });
+
 // Initialize application with enhanced animations
 function initializeApp() {
     showSection('home');
@@ -180,6 +182,7 @@ function initializeApp() {
     setupMobileMenu();
     addLoadingStates();
 }
+
 // Enhanced event listeners
 function setupEventListeners() {
     // Navigation with smooth transitions
@@ -190,32 +193,27 @@ function setupEventListeners() {
             showSectionWithTransition(section);
         });
     });
+
     // Enhanced forms with better feedback
     const quickInquiryForm = document.getElementById('quick-inquiry-form');
     if (quickInquiryForm) {
         quickInquiryForm.addEventListener('submit', handleQuickInquiryEnhanced);
     }
+
     const contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.addEventListener('submit', handleContactFormEnhanced);
     }
+
     const bookingForm = document.getElementById('booking-form');
     if (bookingForm) {
         bookingForm.addEventListener('submit', handleBookingFormEnhanced);
     }
-     const taxiForm = document.getElementById('taxi-form');
-    if (taxiForm) {
-        taxiForm.addEventListener('submit', function(e) {
-          e.preventDefault();
-          document.getElementById('taxi-success').innerHTML =
-               '<div class="message success">🚗 Taxi Booked! You will receive confirmation soon.</div>';
-          taxiForm.reset();
-       });
-    }
-                                                        
+
     // Enhanced filters with animations
     setupFilterListenersEnhanced();
 }
+
 // Enhanced section transitions
 function showSectionWithTransition(sectionName) {
     const currentSection = document.querySelector('.section.active');
@@ -251,6 +249,7 @@ function showSectionWithTransition(sectionName) {
     // Update navigation with enhanced effects
     updateNavigationEnhanced(sectionName);
 }
+
 // Enhanced navigation update
 function updateNavigationEnhanced(sectionName) {
     document.querySelectorAll('.nav-link').forEach(link => {
@@ -262,6 +261,7 @@ function updateNavigationEnhanced(sectionName) {
         }
     });
 }
+
 // Add ripple effect to elements
 function addRippleEffect(element) {
     const ripple = document.createElement('span');
@@ -272,6 +272,7 @@ function addRippleEffect(element) {
         ripple.remove();
     }, 600);
 }
+
 // Enhanced loading states
 function addLoadingStates() {
     const style = document.createElement('style');
@@ -305,6 +306,7 @@ function addLoadingStates() {
     `;
     document.head.appendChild(style);
 }
+
 // Enhanced featured content loading
 function loadFeaturedDestinationsEnhanced() {
     const container = document.getElementById('featured-destinations');
@@ -335,6 +337,7 @@ function loadFeaturedDestinationsEnhanced() {
     // Add hover effects
     addCardHoverEffects();
 }
+
 // Enhanced packages loading
 function loadFeaturedPackagesEnhanced() {
     const container = document.getElementById('featured-packages');
@@ -366,6 +369,7 @@ function loadFeaturedPackagesEnhanced() {
     
     addCardHoverEffects();
 }
+
 // Enhanced testimonials with animations
 function loadTestimonialsEnhanced() {
     const container = document.getElementById('testimonials');
@@ -382,6 +386,7 @@ function loadTestimonialsEnhanced() {
         </div>
     `).join('');
 }
+
 // Enhanced card hover effects
 function addCardHoverEffects() {
     document.querySelectorAll('.card').forEach(card => {
@@ -396,6 +401,7 @@ function addCardHoverEffects() {
         });
     });
 }
+
 // Enhanced form handlers with better feedback
 function handleQuickInquiryEnhanced(e) {
     e.preventDefault();
@@ -422,6 +428,7 @@ function handleQuickInquiryEnhanced(e) {
         submitBtn.disabled = false;
     }, 2000);
 }
+
 function handleContactFormEnhanced(e) {
     e.preventDefault();
     
@@ -442,6 +449,7 @@ function handleContactFormEnhanced(e) {
         submitBtn.disabled = false;
     }, 1500);
 }
+
 function handleBookingFormEnhanced(e) {
     e.preventDefault();
     
@@ -465,6 +473,7 @@ function handleBookingFormEnhanced(e) {
         submitBtn.disabled = false;
     }, 2500);
 }
+
 // Enhanced message system with better styling
 function showMessageEnhanced(message, type = 'success') {
     const container = document.getElementById('message-container');
@@ -494,6 +503,7 @@ function showMessageEnhanced(message, type = 'success') {
         }
     }, 6000);
 }
+
 // Enhanced destinations loading
 function loadDestinationsEnhanced() {
     const container = document.getElementById('destinations-grid');
@@ -521,6 +531,7 @@ function loadDestinationsEnhanced() {
     
     addCardHoverEffects();
 }
+
 // Enhanced packages loading
 function loadPackagesEnhanced() {
     const container = document.getElementById('packages-grid');
@@ -556,6 +567,7 @@ function loadPackagesEnhanced() {
     
     addCardHoverEffects();
 }
+
 // Enhanced destination details modal
 function showDestinationDetailsEnhanced(destinationId) {
     const destination = appData.destinations.find(d => d.id === destinationId);
@@ -588,6 +600,7 @@ function showDestinationDetailsEnhanced(destinationId) {
     
     showModal('destination-modal');
 }
+
 // Enhanced package details modal
 function showPackageDetailsEnhanced(packageId) {
     const pkg = appData.packages.find(p => p.id === packageId);
@@ -632,6 +645,7 @@ function showPackageDetailsEnhanced(packageId) {
     
     showModal('package-modal');
 }
+
 // Enhanced booking function
 function bookPackageEnhanced(packageId) {
     const pkg = appData.packages.find(p => p.id === packageId);
@@ -640,6 +654,7 @@ function bookPackageEnhanced(packageId) {
     document.getElementById('booking-package-id').value = packageId;
     showModal('booking-modal');
 }
+
 // Enhanced filter listeners
 function setupFilterListenersEnhanced() {
     // Destination filters
@@ -668,6 +683,7 @@ function setupFilterListenersEnhanced() {
         });
     });
 }
+
 // Enhanced filter functions
 function filterDestinationsEnhanced(region) {
     if (region === 'all') {
@@ -677,6 +693,7 @@ function filterDestinationsEnhanced(region) {
     }
     loadDestinationsEnhanced();
 }
+
 function filterPackagesEnhanced(type) {
     if (type === 'all') {
         currentPackages = [...appData.packages];
@@ -685,6 +702,7 @@ function filterPackagesEnhanced(type) {
     }
     loadPackagesEnhanced();
 }
+
 // Enhanced search functions
 function searchDestinations() {
     const searchInput = document.getElementById('destination-search');
@@ -704,6 +722,7 @@ function searchDestinations() {
     
     loadDestinationsEnhanced();
 }
+
 function searchPackages() {
     const searchInput = document.getElementById('package-search');
     if (!searchInput) return;
@@ -722,6 +741,7 @@ function searchPackages() {
     
     loadPackagesEnhanced();
 }
+
 function filterByPrice() {
     const priceRange = document.getElementById('price-range');
     const priceValue = document.getElementById('price-value');
@@ -734,6 +754,7 @@ function filterByPrice() {
         loadPackagesEnhanced();
     }
 }
+
 // Modal functions
 function showModal(modalId) {
     const modal = document.getElementById(modalId);
@@ -742,6 +763,7 @@ function showModal(modalId) {
         document.body.style.overflow = 'hidden';
     }
 }
+
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -749,6 +771,7 @@ function closeModal(modalId) {
         document.body.style.overflow = '';
     }
 }
+
 // Close modal when clicking outside
 document.addEventListener('click', function(e) {
     if (e.target.classList.contains('modal')) {
@@ -756,6 +779,7 @@ document.addEventListener('click', function(e) {
         document.body.style.overflow = '';
     }
 });
+
 // Add scroll effects and animations
 function addScrollEffects() {
     window.addEventListener('scroll', function() {
@@ -774,6 +798,7 @@ function addScrollEffects() {
         }
     });
 }
+
 // Intersection Observer for animations
 function addIntersectionObserver() {
     const observer = new IntersectionObserver((entries) => {
@@ -792,6 +817,7 @@ function addIntersectionObserver() {
         observer.observe(section);
     });
 }
+
 // Add search event listeners with debounce
 document.addEventListener('DOMContentLoaded', function() {
     const destinationSearch = document.getElementById('destination-search');
@@ -805,6 +831,7 @@ document.addEventListener('DOMContentLoaded', function() {
         packageSearch.addEventListener('input', debounce(searchPackages, 300));
     }
 });
+
 // Utility functions
 function debounce(func, wait) {
     let timeout;
@@ -817,18 +844,22 @@ function debounce(func, wait) {
         timeout = setTimeout(later, wait);
     };
 }
+
 // Update main functions to use enhanced versions
 function showSection(sectionName) {
     showSectionWithTransition(sectionName);
 }
+
 function loadFeaturedContent() {
     loadFeaturedDestinationsEnhanced();
     loadFeaturedPackagesEnhanced();
     loadTestimonialsEnhanced();
 }
+
 function showMessage(message, type) {
     showMessageEnhanced(message, type);
 }
+
 // Setup navigation functions
 function setupNavigation() {
     const navLinks = document.querySelectorAll('.nav-link');
@@ -849,6 +880,7 @@ function setupNavigation() {
         });
     });
 }
+
 function setupMobileMenu() {
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
@@ -866,6 +898,7 @@ function setupMobileMenu() {
         });
     }
 }
+
 // Export functions for global access
 window.showSection = showSection;
 window.showMessage = showMessage;
@@ -873,4 +906,3 @@ window.closeModal = closeModal;
 window.searchDestinations = searchDestinations;
 window.searchPackages = searchPackages;
 window.filterByPrice = filterByPrice;
-```
