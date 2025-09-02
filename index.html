@@ -21,6 +21,7 @@
                 <a href="#" class="nav-link active" data-section="home">🏠 Home</a>
                 <a href="#" class="nav-link" data-section="destinations">🌍 Destinations</a>
                 <a href="#" class="nav-link" data-section="packages">📦 Packages</a>
+                <a href="#" class="nav-link" data-section="taxi">🚕 Taxi Service</a>
                 <a href="#" class="nav-link" data-section="about">ℹ️ About</a>
                 <a href="#" class="nav-link" data-section="contact">📞 Contact</a>
             </div>
@@ -41,7 +42,8 @@
             <div class="hero">
                 <div class="hero-content">
                     <h1>✨ Discover Amazing Destinations</h1>
-                    <p>🌟 Experience the world with Tridev Travel Agency. From exotic beaches to cultural wonders, we create unforgettable journeys that touch your soul and create memories for a lifetime.</p>
+                    <p>🌟 Experience the world with Tridev Travel Agency. From exotic beaches to cultural wonders, we create unforgettable journeys that touch your soul and create memories for a lifetime.<br>
+                        Now including reliable taxi services!</p>
                     <div class="hero-actions">
                         <button class="btn btn--primary btn--lg" onclick="showSection('destinations')">
                             🗺️ Explore Destinations
@@ -49,6 +51,7 @@
                         <button class="btn btn--outline btn--lg" onclick="showSection('packages')">
                             🎁 View Packages
                         </button>
+                        <button class="btn btn--secondary btn--lg" onclick="showSection('taxi')">🚕Book Taxi</button>
                     </div>
                 </div>
             </div>
@@ -108,6 +111,38 @@
                 </div>
             </div>
         </section>
+        
+        <!-- Taxi Section -->
+        <section id="taxi" class="section">
+            <div class="container">
+                <div class="section-header">
+                    <h1>🚕 Taxi Service</h1>
+                    <p>Book reliable taxis for airport transfers, sightseeing, and intercity travel.</p>
+                </div>
+                <div class="taxi-content">
+                    <form class="taxi-form" id="taxi-form">
+                        <div class="form-group">
+                            <input type="text" name="pickup" placeholder="🛑 Pickup Location" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="drop" placeholder="🏁 Drop Location" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="date" name="date" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="time" name="time" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="number" name="passengers" min="1" max="8" placeholder="👤 Number of Passengers" required>
+                        </div>
+                        <button type="submit" class="btn btn--primary btn--lg">Book Taxi</button>
+                    </form>
+                    <div id="taxi-success" class="message-container"></div>
+                </div>
+            </div>
+        </section>
+
 
         <!-- Destinations Section -->
         <section id="destinations" class="section">
