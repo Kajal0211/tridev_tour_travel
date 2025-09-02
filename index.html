@@ -6,7 +6,7 @@
     <title>Tridev Travel Agency - Your Journey Begins Here</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,7 +21,6 @@
                 <a href="#" class="nav-link active" data-section="home">🏠 Home</a>
                 <a href="#" class="nav-link" data-section="destinations">🌍 Destinations</a>
                 <a href="#" class="nav-link" data-section="packages">📦 Packages</a>
-                <a href="#" class="nav-link" data-section="taxi">🚕 Taxi Service</a>
                 <a href="#" class="nav-link" data-section="about">ℹ️ About</a>
                 <a href="#" class="nav-link" data-section="contact">📞 Contact</a>
             </div>
@@ -35,51 +34,77 @@
 
     <!-- Main Content -->
     <main class="main-content">
+        
         <!-- Home Section -->
         <section id="home" class="section active">
+            <!-- Hero Section -->
             <div class="hero">
                 <div class="hero-content">
-                    <h1>Discover Amazing Destinations</h1>
-                    <p>
-                        Experience the world with Tridev Travel Agency. Adventure, comfort, and unforgettable journeys start here.<br>
-                        Now including reliable taxi services!
-                    </p>
+                    <h1>✨ Discover Amazing Destinations</h1>
+                    <p>🌟 Experience the world with Tridev Travel Agency. From exotic beaches to cultural wonders, we create unforgettable journeys that touch your soul and create memories for a lifetime.</p>
                     <div class="hero-actions">
-                        <button class="btn btn--primary btn--lg" onclick="showSection('destinations')">Explore Destinations</button>
-                        <button class="btn btn--outline btn--lg" onclick="showSection('packages')">View Packages</button>
-                        <button class="btn btn--secondary btn--lg" onclick="showSection('taxi')">Book Taxi</button>
+                        <button class="btn btn--primary btn--lg" onclick="showSection('destinations')">
+                            🗺️ Explore Destinations
+                        </button>
+                        <button class="btn btn--outline btn--lg" onclick="showSection('packages')">
+                            🎁 View Packages
+                        </button>
                     </div>
                 </div>
             </div>
-        </section>
 
-        <!-- Taxi Section -->
-        <section id="taxi" class="section">
-            <div class="container">
-                <div class="section-header">
-                    <h1>🚕 Taxi Service</h1>
-                    <p>Book reliable taxis for airport transfers, sightseeing, and intercity travel.</p>
-                </div>
-                <div class="taxi-content">
-                    <form class="taxi-form" id="taxi-form">
+            <!-- Quick Inquiry -->
+            <div class="quick-inquiry">
+                <div class="container">
+                    <h2>🎯 Plan Your Perfect Adventure</h2>
+                    <form class="inquiry-form" id="quick-inquiry-form">
                         <div class="form-group">
-                            <input type="text" name="pickup" placeholder="🛑 Pickup Location" required>
+                            <input type="text" id="destination-input" placeholder="🌍 Where do you want to explore?" required>
                         </div>
                         <div class="form-group">
-                            <input type="text" name="drop" placeholder="🏁 Drop Location" required>
+                            <input type="date" id="travel-date" required>
                         </div>
                         <div class="form-group">
-                            <input type="date" name="date" required>
+                            <select id="travelers" required>
+                                <option value="">👥 Number of Travelers</option>
+                                <option value="1">👤 1 Person</option>
+                                <option value="2">👫 2 People</option>
+                                <option value="3-5">👨‍👩‍👧‍👦 3-5 People</option>
+                                <option value="6+">👨‍👩‍👧‍👦 6+ People</option>
+                            </select>
                         </div>
-                        <div class="form-group">
-                            <input type="time" name="time" required>
-                        </div>
-                        <div class="form-group">
-                            <input type="number" name="passengers" min="1" max="8" placeholder="👤 Number of Passengers" required>
-                        </div>
-                        <button type="submit" class="btn btn--primary btn--lg">Book Taxi</button>
+                        <button type="submit" class="btn btn--secondary">💫 Get Your Quote</button>
                     </form>
-                    <div id="taxi-success" class="message-container"></div>
+                </div>
+            </div>
+
+            <!-- Featured Destinations -->
+            <div class="featured-section">
+                <div class="container">
+                    <h2>🏝️ Featured Destinations</h2>
+                    <div class="featured-grid" id="featured-destinations">
+                        <!-- Destinations will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Featured Packages -->
+            <div class="featured-section">
+                <div class="container">
+                    <h2>🎁 Popular Packages</h2>
+                    <div class="featured-grid" id="featured-packages">
+                        <!-- Packages will be loaded here -->
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials-section">
+                <div class="container">
+                    <h2>💖 What Our Travelers Say</h2>
+                    <div class="testimonials-grid" id="testimonials">
+                        <!-- Testimonials will be loaded here -->
+                    </div>
                 </div>
             </div>
         </section>
@@ -89,21 +114,25 @@
             <div class="container">
                 <div class="section-header">
                     <h1>🌍 Explore Destinations</h1>
-                    <p>Discover breathtaking places around the world.</p>
+                    <p>Discover breathtaking places around the world that will leave you speechless</p>
                 </div>
+
                 <div class="filters-section">
                     <div class="search-box">
-                        <input type="text" id="destination-search" placeholder="🔍 Search destinations...">
+                        <input type="text" id="destination-search" placeholder="🔍 Search amazing destinations...">
                         <button type="button" onclick="searchDestinations()">🔍</button>
                     </div>
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-region="all">🌏 All Regions</button>
-                        <button class="filter-btn" data-region="Asia">Asia</button>
-                        <button class="filter-btn" data-region="Europe">Europe</button>
-                        <button class="filter-btn" data-region="America">America</button>
+                        <button class="filter-btn" data-region="Asia">🏯 Asia</button>
+                        <button class="filter-btn" data-region="Europe">🏰 Europe</button>
+                        <button class="filter-btn" data-region="America">🗽 America</button>
                     </div>
                 </div>
-                <div class="destinations-grid" id="destinations-grid"></div>
+
+                <div class="destinations-grid" id="destinations-grid">
+                    <!-- Destinations will be loaded here -->
+                </div>
             </div>
         </section>
 
@@ -111,27 +140,31 @@
         <section id="packages" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h1>Travel Packages</h1>
-                    <p>Choose from our curated travel experiences.</p>
+                    <h1>🎁 Travel Packages</h1>
+                    <p>Choose from our carefully curated travel experiences designed for unforgettable adventures</p>
                 </div>
+
                 <div class="filters-section">
                     <div class="search-box">
-                        <input type="text" id="package-search" placeholder="🔍 Search packages...">
+                        <input type="text" id="package-search" placeholder="🔍 Search perfect packages...">
                         <button type="button" onclick="searchPackages()">🔍</button>
                     </div>
                     <div class="filter-buttons">
-                        <button class="filter-btn active" data-type="all">All Types</button>
-                        <button class="filter-btn" data-type="Cultural">Cultural</button>
-                        <button class="filter-btn" data-type="Adventure">Adventure</button>
-                        <button class="filter-btn" data-type="Luxury">Luxury</button>
-                        <button class="filter-btn" data-type="Beach">Beach</button>
+                        <button class="filter-btn active" data-type="all">✨ All Types</button>
+                        <button class="filter-btn" data-type="Cultural">🏛️ Cultural</button>
+                        <button class="filter-btn" data-type="Adventure">⛰️ Adventure</button>
+                        <button class="filter-btn" data-type="Luxury">💎 Luxury</button>
+                        <button class="filter-btn" data-type="Beach">🏖️ Beach</button>
                     </div>
                     <div class="price-filter">
-                        <label for="price-range">Price Range: $<span id="price-value">0-3000</span></label>
+                        <label for="price-range">💰 Price Range: $<span id="price-value">0-3000</span></label>
                         <input type="range" id="price-range" min="0" max="3000" value="3000" oninput="filterByPrice()">
                     </div>
                 </div>
-                <div class="packages-grid" id="packages-grid"></div>
+
+                <div class="packages-grid" id="packages-grid">
+                    <!-- Packages will be loaded here -->
+                </div>
             </div>
         </section>
 
@@ -139,19 +172,45 @@
         <section id="about" class="section">
             <div class="container">
                 <div class="section-header">
-                    <h1>About Tridev Travel Agency</h1>
-                    <p>Your trusted partner for adventure and travel.</p>
+                    <h1>✨ About Tridev Travel Agency</h1>
+                    <p>Your trusted partner for creating magical journeys and unforgettable memories</p>
                 </div>
+
                 <div class="about-content">
                     <div class="about-story">
-                        <h2>Our Story</h2>
-                        <p>Established in 2015, Tridev Travel Agency creates magical travel experiences with personalized solutions for every traveler.</p>
+                        <h2>📖 Our Story</h2>
+                        <p>🌟 Established in 2015, Tridev Travel Agency has been creating magical travel experiences for over 9 years. We specialize in personalized travel solutions that cater to your unique preferences and budget, ensuring every journey becomes a treasured memory.</p>
+                        
+                        <h3>🎯 Our Mission</h3>
+                        <p>✨ To provide exceptional travel experiences that create lasting memories for our clients while ensuring comfort, safety, and incredible value for money. We believe every journey should be transformative and inspiring.</p>
+                        
+                        <h3>🌟 Why Choose Us?</h3>
+                        <ul>
+                            <li>🧭 Expert travel consultants with deep local knowledge</li>
+                            <li>🎨 Customized itineraries tailored to your unique preferences</li>
+                            <li>🛡️ 24/7 customer support throughout your entire journey</li>
+                            <li>💰 Best price guarantee on all our packages</li>
+                            <li>❤️ Trusted by thousands of satisfied travelers worldwide</li>
+                        </ul>
                     </div>
+
                     <div class="about-stats">
-                        <div class="stat-card"><h3>9+</h3><p>Years of Excellence</p></div>
-                        <div class="stat-card"><h3>50+</h3><p>Destinations</p></div>
-                        <div class="stat-card"><h3>5000+</h3><p>Happy Travelers</p></div>
-                        <div class="stat-card"><h3>98%</h3><p>Satisfaction Rate</p></div>
+                        <div class="stat-card">
+                            <h3>9+</h3>
+                            <p>Years of Excellence</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>50+</h3>
+                            <p>Amazing Destinations</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>5000+</h3>
+                            <p>Happy Travelers</p>
+                        </div>
+                        <div class="stat-card">
+                            <h3>98%</h3>
+                            <p>Satisfaction Rate</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -162,32 +221,55 @@
             <div class="container">
                 <div class="section-header">
                     <h1>📞 Contact Us</h1>
-                    <p>Get in touch with our travel experts.</p>
+                    <p>Ready to embark on your next adventure? Get in touch with our travel experts</p>
                 </div>
+
                 <div class="contact-content">
                     <div class="contact-info">
-                        <h3>Get In Touch</h3>
-                        <div class="contact-item"><strong>📞 Phone:</strong><p>+91-9876543210</p></div>
-                        <div class="contact-item"><strong>📧 Email:</strong><p>info@tridevtravel.com</p></div>
-                        <div class="contact-item"><strong>📍 Address:</strong><p>123 Travel Street<br>Rudrapur, Uttarakhand<br>India</p></div>
+                        <h3>🌟 Get In Touch</h3>
+                        <div class="contact-item">
+                            <strong>📞 Phone:</strong>
+                            <p>+91-9876543210</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📧 Email:</strong>
+                            <p>info@tridevtravel.com</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>📍 Address:</strong>
+                            <p>🏢 123 Travel Street<br>🏔️ Rudrapur, Uttarakhand<br>🇮🇳 India</p>
+                        </div>
+                        <div class="contact-item">
+                            <strong>🕒 Office Hours:</strong>
+                            <p>📅 Mon - Sat: 9:00 AM - 7:00 PM<br>🌞 Sun: 10:00 AM - 5:00 PM</p>
+                        </div>
                     </div>
+
                     <div class="contact-form-section">
-                        <h3>Send us a Message</h3>
+                        <h3>💌 Send us a Message</h3>
                         <form class="contact-form" id="contact-form">
-                            <div class="form-group"><input type="text" name="name" placeholder="Your Name" required></div>
-                            <div class="form-group"><input type="email" name="email" placeholder="Your Email" required></div>
-                            <div class="form-group"><input type="tel" name="phone" placeholder="Your Phone Number"></div>
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="👤 Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="📧 Your Email" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="tel" name="phone" placeholder="📞 Your Phone Number">
+                            </div>
                             <div class="form-group">
                                 <select name="subject" required>
-                                    <option value="">Select Subject</option>
-                                    <option value="general">General Inquiry</option>
-                                    <option value="booking">Package Booking</option>
-                                    <option value="custom">Custom Tour</option>
-                                    <option value="support">Support</option>
+                                    <option value="">📝 Select Subject</option>
+                                    <option value="general">💬 General Inquiry</option>
+                                    <option value="booking">🎫 Package Booking</option>
+                                    <option value="custom">🎨 Custom Tour</option>
+                                    <option value="support">🛟 Support</option>
                                 </select>
                             </div>
-                            <div class="form-group"><textarea name="message" placeholder="Your Message" rows="5" required></textarea></div>
-                            <button type="submit" class="btn btn--primary btn--lg">Send Message</button>
+                            <div class="form-group">
+                                <textarea name="message" placeholder="💭 Your Message" rows="5" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn--primary btn--lg">✨ Send Message</button>
                         </form>
                     </div>
                 </div>
@@ -200,32 +282,114 @@
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>Tridev Travel Agency</h3>
-                    <p>Premium adventures & reliable services, now including taxi bookings!</p>
+                    <h3>✈️ Tridev Travel Agency</h3>
+                    <p>🌟 Your trusted partner for unforgettable journeys. Creating memories that last a lifetime and adventures that inspire the soul.</p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook">📘</a>
                         <a href="#" aria-label="Instagram">📸</a>
                         <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="YouTube">📺</a>
                     </div>
                 </div>
                 <div class="footer-section">
-                    <h4>Quick Links</h4>
+                    <h4>🔗 Quick Links</h4>
                     <ul>
-                        <li><a href="#" onclick="showSection('home')">Home</a></li>
-                        <li><a href="#" onclick="showSection('destinations')">Destinations</a></li>
-                        <li><a href="#" onclick="showSection('packages')">Packages</a></li>
-                        <li><a href="#" onclick="showSection('taxi')">Taxi Service</a></li>
-                        <li><a href="#" onclick="showSection('about')">About</a></li>
+                        <li><a href="#" onclick="showSection('home')">🏠 Home</a></li>
+                        <li><a href="#" onclick="showSection('destinations')">🌍 Destinations</a></li>
+                        <li><a href="#" onclick="showSection('packages')">🎁 Packages</a></li>
+                        <li><a href="#" onclick="showSection('about')">ℹ️ About</a></li>
                     </ul>
                 </div>
+                <div class="footer-section">
+                    <h4>🏝️ Popular Destinations</h4>
+                    <ul>
+                        <li><a href="#">🥥 Kerala</a></li>
+                        <li><a href="#">🏰 Rajasthan</a></li>
+                        <li><a href="#">🏖️ Goa</a></li>
+                        <li><a href="#">🏙️ Dubai</a></li>
+                        <li><a href="#">🛕 Thailand</a></li>
+                        <li><a href="#">🌸 Singapore</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>📞 Contact Info</h4>
+                    <p>📞 +91-9876543210</p>
+                    <p>📧 info@tridevtravel.com</p>
+                    <p>📍 Rudrapur, Uttarakhand, India</p>
+                    <p>🕒 Mon-Sat: 9AM-7PM</p>
+                </div>
             </div>
-            <div class="footer-bottom"><p>© 2025 Tridev Travel Agency. All rights reserved.</p></div>
+            <div class="footer-bottom">
+                <p>© 2025 Tridev Travel Agency. All rights reserved. ✨ Made with ❤️ for travelers</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Enhanced Modals -->
+    <div id="destination-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('destination-modal')">&times;</span>
+            <div id="destination-modal-content">
+                <!-- Destination details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="package-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('package-modal')">&times;</span>
+            <div id="package-modal-content">
+                <!-- Package details will be loaded here -->
+            </div>
+        </div>
+    </div>
+
+    <div id="booking-modal" class="modal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeModal('booking-modal')">&times;</span>
+            <div class="booking-form-container">
+                <h2>🎫 Book This Amazing Package</h2>
+                <form id="booking-form" class="booking-form">
+                    <input type="hidden" id="booking-package-id" name="packageId">
+                    <div class="form-group">
+                        <input type="text" name="fullName" placeholder="👤 Full Name" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" name="email" placeholder="📧 Email Address" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" name="phone" placeholder="📞 Phone Number" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="number" name="travelers" min="1" max="20" placeholder="👥 Number of Travelers" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="date" name="travelDate" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea name="specialRequests" placeholder="💭 Special Requests (Optional)" rows="3"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn--primary btn--lg">✨ Confirm Booking</button>
+                </form>
+            </div>
+        </div>
+    </div>
 
     <!-- Success/Error Messages -->
     <div id="message-container" class="message-container"></div>
 
+    <!-- JavaScript -->
     <script src="app.js"></script>
+    <script>
+        // Add scroll effect to navbar
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+    </script>
 </body>
 </html>
