@@ -20,7 +20,7 @@
             <div class="nav-menu" id="nav-menu">
                 <a href="#" class="nav-link active" data-section="home">🏠 Home</a>
                 <a href="#" class="nav-link" data-section="destinations">🌍 Destinations</a>
-                <a href="#" class="nav-link" data-section="packages">📦 Packages</a>
+                <a href="#" class="nav-link" data-section="taxi packages">📦 Taxi Packages</a>
                 <a href="#" class="nav-link" data-section="taxi">🚕 Taxi Service</a>
                 <a href="#" class="nav-link" data-section="about">ℹ️ About</a>
                 <a href="#" class="nav-link" data-section="contact">📞 Contact</a>
@@ -48,7 +48,7 @@
                         <button class="btn btn--primary btn--lg" onclick="showSection('destinations')">
                             🗺️ Explore Destinations
                         </button>
-                        <button class="btn btn--outline btn--lg" onclick="showSection('packages')">
+                        <button class="btn btn--outline btn--lg" onclick="showSection('taxi packages')">
                             🎁 View Packages
                         </button>
                         <button class="btn btn--secondary btn--lg" onclick="showSection('taxi')">🚕Book Taxi</button>
@@ -91,10 +91,10 @@
                 </div>
             </div>
 
-            <!-- Featured Packages -->
+            <!-- Featured Taxi Packages -->
             <div class="featured-section">
                 <div class="container">
-                    <h2>🎁 Popular Packages</h2>
+                    <h2>🎁 Popular Taxi Packages</h2>
                     <div class="featured-grid" id="featured-packages">
                         <!-- Packages will be loaded here -->
                     </div>
@@ -159,19 +159,19 @@
                     </div>
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-region="all">🌏 All Regions</button>
-                        <button class="filter-btn" data-region="Asia">🏯 Asia</button>
-                        <button class="filter-btn" data-region="Europe">🏰 Europe</button>
-                        <button class="filter-btn" data-region="America">🗽 America</button>
+                        <button class="filter-btn" data-region="Kumaun/Garhwal"> 🏔️Kumaun/Garhwal </button>
+                        <button class="filter-btn" data-region="North India"> ☃️North India </button>
+                        <button class="filter-btn" data-region="South India">⚓South India </button>
                     </div>
                 </div>
 
                 <div class="destinations-grid" id="destinations-grid">
-                    <!-- Destinations will be loaded here -->
+                    <!-- Destination will be loaded here -->
                 </div>
             </div>
         </section>
 
-        <!-- Packages Section -->
+        <!-- Taxi Packages Section -->
         <section id="packages" class="section">
             <div class="container">
                 <div class="section-header">
@@ -186,19 +186,19 @@
                     </div>
                     <div class="filter-buttons">
                         <button class="filter-btn active" data-type="all">✨ All Types</button>
-                        <button class="filter-btn" data-type="Cultural">🏛️ Cultural</button>
-                        <button class="filter-btn" data-type="Adventure">⛰️ Adventure</button>
-                        <button class="filter-btn" data-type="Luxury">💎 Luxury</button>
-                        <button class="filter-btn" data-type="Beach">🏖️ Beach</button>
+                        <button class="filter-btn" data-type="SEDANE'S">🏛️SEDANE</button>
+                        <button class="filter-btn" data-type="SUV'S">⛰️ SUV</button>
+                        <button class="filter-btn" data-type="MPV'S">💎 MPV</button>
+                        <button class="filter-btn" data-type="HATCHVACK'S">🏖️ HATCHVACK</button>
                     </div>
-                    <div class="price-filter">
-                        <label for="price-range">💰 Price Range: $<span id="price-value">0-3000</span></label>
-                        <input type="range" id="price-range" min="0" max="3000" value="3000" oninput="filterByPrice()">
+                    <div class="price-filter" style="text-align:center;">
+                         <button class="btn btn--primary" onclick="goToContact()">Enquire Now</button>
                     </div>
+
                 </div>
 
                 <div class="packages-grid" id="packages-grid">
-                    <!-- Packages will be loaded here -->
+                    <!--Taxi Packages will be loaded here -->
                 </div>
             </div>
         </section>
@@ -264,6 +264,7 @@
                         <h3>🌟 Get In Touch</h3>
                         <div class="contact-item">
                             <strong>📞 Phone:</strong>
+                            <p>+91-8800778189</p>
                             <p>+91-9634347223</p>
                         </div>
                         <div class="contact-item">
@@ -331,23 +332,24 @@
                     <ul>
                         <li><a href="#" onclick="showSection('home')">🏠 Home</a></li>
                         <li><a href="#" onclick="showSection('destinations')">🌍 Destinations</a></li>
-                        <li><a href="#" onclick="showSection('packages')">🎁 Packages</a></li>
+                        <li><a href="#" onclick="showSection('travel packages')">🎁 Travel Packages</a></li>
                         <li><a href="#" onclick="showSection('about')">ℹ️ About</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>🏝️ Popular Destinations</h4>
                     <ul>
-                        <li><a href="#">🥥 Kerala</a></li>
-                        <li><a href="#">🏰 Rajasthan</a></li>
+                        <li><a href="#">🥥 Kumau / garwhal </a></li>
+                        <li><a href="#">🏰 North india </a></li>
                         <li><a href="#">🏖️ Goa</a></li>
-                        <li><a href="#">🏙️ Dubai</a></li>
-                        <li><a href="#">🛕 Thailand</a></li>
-                        <li><a href="#">🌸 Singapore</a></li>
+                        <li><a href="#">🏙️ South India </a></li>
+                        <li><a href="#">🛕Mumbai </a></li>
+                        <li><a href="#">🌸 Jammu and Kashmir</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h4>📞 Contact Info</h4>
+                    <p>📞 +91-8800778189</p>
                     <p>📞 +91-9634347223</p>
                     <p>📧 tridevtravelagencyy@gmail.com </p>
                     <p>📍 Rudrapur, Uttarakhand, India</p>
