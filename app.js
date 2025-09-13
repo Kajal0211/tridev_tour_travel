@@ -1,61 +1,71 @@
 // Enhanced Application data with emojis and better descriptions
 const appData = {
   "destinations": [
-    {
-      "id": 1,
-      "name": "Kerala",
-      "region": "Asia",
-      "description": "🥥 God's Own Country - Mystical backwaters, luxury houseboats, and aromatic spice plantations await your discovery",
-      "highlights": ["🚤 Backwater cruises", "🌿 Spice plantations", "💆 Ayurvedic treatments", "🏔️ Hill stations"],
-      "image": "kerala-backwaters.jpg",
-      "emoji": "🥥"
-    },
-    {
-      "id": 2,
-      "name": "Rajasthan",
-      "region": "Asia", 
-      "description": "🏰 Land of Kings - Magnificent palaces, golden deserts, and rich cultural heritage that tells tales of royalty",
-      "highlights": ["🐪 Desert safari", "🏰 Palace hotels", "🐫 Camel rides", "🎭 Cultural shows"],
-      "image": "rajasthan-palace.jpg",
-      "emoji": "🏰"
-    },
-    {
-      "id": 3,
-      "name": "Goa",
-      "region": "Asia",
-      "description": "🏖️ Beach paradise with Portuguese heritage, golden sands, and vibrant nightlife that never sleeps",
-      "highlights": ["🏖️ Beautiful beaches", "🏄 Water sports", "🏛️ Colonial architecture", "🎉 Nightlife"],
-      "image": "goa-beach.jpg",
-      "emoji": "🏖️"
-    },
-    {
-      "id": 4,
-      "name": "Dubai",
-      "region": "Asia",
-      "description": "🏙️ Futuristic metropolis with towering skyscrapers, luxury shopping, and iconic modern architecture",
-      "highlights": ["🗼 Burj Khalifa", "🏜️ Desert safari", "🛍️ Luxury shopping", "🏗️ Modern architecture"],
-      "image": "dubai-skyline.jpg",
-      "emoji": "🏙️"
-    },
-    {
-      "id": 5,
-      "name": "Thailand",
-      "region": "Asia",
-      "description": "🛕 Land of Smiles with ancient temples, tropical beaches, and the most delicious cuisine in the world",
-      "highlights": ["🛕 Ancient temples", "🏝️ Island hopping", "💆 Thai massage", "🍜 Street food"],
-      "image": "thailand-temple.jpg",
-      "emoji": "🛕"
-    },
-    {
-      "id": 6,
-      "name": "Singapore",
-      "region": "Asia",
-      "description": "🌸 Modern city-state with futuristic gardens, incredible cuisine, and world-class attractions",
-      "highlights": ["🌺 Gardens by the Bay", "🏨 Marina Bay Sands", "🍜 Hawker centers", "🎢 Universal Studios"],
-      "image": "singapore-gardens.jpg",
-      "emoji": "🌸"
-    }
-  ],
+  {
+    "id": 1,
+    "name": "Kumaun",
+    "region": "Kumaun/Garhwal",
+    "description": "🏔️ Beautiful Kumaun region with majestic mountains and serene landscapes.",
+    "highlights": ["⛰️ Trekking", "🏞️ Scenic viewpoints", "🌲 Forest walks"],
+    "image": "kumaun.jpg",
+    "emoji": "🏔️"
+  },
+  {
+    "id": 2,
+    "name": "Garhwal",
+    "region": "Kumaun/Garhwal",
+    "description": "🏔️ Mystical Garhwal region with spiritual sites and adventure activities.",
+    "highlights": ["🕉️ Temples", "🚣 River rafting", "🌟 Spiritual tours"],
+    "image": "garhwal.jpg",
+    "emoji": "🕉️"
+  },
+  {
+    "id": 3,
+    "name": "North India",
+    "region": "North India",
+    "description": "☃️ Explore the rich culture and historical marvels of North India.",
+    "highlights": ["🏯 Forts & Palaces", "🌲 Hill stations", "🍲 Cuisine"],
+    "image": "north-india.jpg",
+    "emoji": "🏯"
+  },
+  {
+    "id": 4,
+    "name": "South India",
+    "region": "South India",
+    "description": "⚓ Experience South India’s temples, beaches, and lush greenery.",
+    "highlights": ["🏝️ Beaches", "🛕 Temples", "🌿 Backwaters"],
+    "image": "south-india.jpg",
+    "emoji": "⚓"
+  },
+  {
+    "id": 5,
+    "name": "Goa",
+    "region": "Goa",
+    "description": "🏖️ Beach paradise with Portuguese heritage and vibrant nightlife.",
+    "highlights": ["🏖️ Beaches", "🎉 Nightlife", "🏄 Water sports"],
+    "image": "goa-beach.jpg",
+    "emoji": "🏖️"
+  },
+  {
+    "id": 6,
+    "name": "Mumbai",
+    "region": "Mumbai",
+    "description": "🏙️ The bustling metropolis known for Bollywood, markets, and food.",
+    "highlights": ["🎬 Bollywood", "🛍️ Shopping", "🍲 Street food"],
+    "image": "mumbai.jpg",
+    "emoji": "🎬"
+  },
+  {
+    "id": 7,
+    "name": "Jammu and Kashmir",
+    "region": "Jammu and Kashmir",
+    "description": "🌸 Heavenly valleys and snowy mountains with rich culture.",
+    "highlights": ["❄️ Snow sports", "🏞️ Scenic beauty", "🕌 Historic mosques"],
+    "image": "jammu-kashmir.jpg",
+    "emoji": "🌸"
+  }
+]
+
   "packages": [
     {
       "id": 1,
@@ -139,21 +149,21 @@ const appData = {
   "testimonials": [
     {
       "name": "Priya Sharma",
-      "location": "Mumbai",
+      "location": "South India",
       "rating": 5,
       "comment": "✨ Amazing Kerala backwater experience! Tridev Travel Agency made our honeymoon absolutely unforgettable. The houseboat was luxurious and the service was impeccable! 🥥💕",
       "emoji": "💕"
     },
     {
       "name": "Rajesh Kumar",
-      "location": "Delhi",
+      "location": "Jammu",
       "rating": 5,
-      "comment": "🏰 Professional service and incredible value for money. Their Rajasthan tour exceeded all our expectations. The palace hotels were like a dream! Highly recommended! ⭐",
+      "comment": "🏰 Professional service and incredible value for money. Their J&K tour exceeded all our expectations. The palace hotels were like a dream! Highly recommended! ⭐",
       "emoji": "⭐"
     },
     {
       "name": "Anita Patel",
-      "location": "Ahmedabad",
+      "location": "Goa",
       "rating": 4,
       "comment": "🏖️ Wonderful Goa trip with the entire family. The kids absolutely loved the water sports and beach activities. Perfect vacation planning! 🌊👨‍👩‍👧‍👦",
       "emoji": "🌊"
