@@ -149,274 +149,159 @@ const appData = {
 let currentDestinations = [...appData.destinations];
 let currentPackages = [...appData.packages];
 let isLoading = false;
-
-// Initialize the application with enhanced effects
-document.addEventListener('DOMContentLoaded', function() {
-    initializeApp();
-    setupEventListeners();
-    loadFeaturedContent();
-    addScrollEffects();
-    addIntersectionObserver();
+// Initialize on DOM loaded
+document.addEventListener('DOMContentLoaded', () => {
+  setupNavigation();
+  setupMobileMenu();
+  setupFilterListeners();
+  loadFeaturedDestinations();
+  loadTaxiPackages();
+  setupFormHandlers();
 });
 
-// Initialize application with enhanced animations
-function initializeApp() {
-    showSection('home');
-    setupNavigation();
-    setupMobileMenu();
-    addLoadingStates();
+// Show/hide sections
+function showSection(section) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  const target = document.getElementById(section.replace(/\s/g, '-'));
+  if (target) target.classList.add('active');
+  updateNavActive(section);
 }
 
-// Navigation setup
+// Update nav active state
+function updateNavActive(section) {
+  document.querySelectorAll('.nav-link').forEach(link => {
+    link.classList.toggle('active', link.getAttribute('data-section') === section);
+  });
+}
+
+// Navigation handlers
 function setupNavigation() {
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', e => {
-            e.preventDefault();
-            const section = link.getAttribute('data-section');
-            showSectionWithTransition(section);
-        });
-    });
+  document.querySelectorAll('.nav-link').forEach(link =>
+    link.addEventListener('click', e => {
+      e.preventDefault();
+      const sec = link.getAttribute('data-section');
+      showSection(sec);
+    })
+  );
 }
 
-// Show section with fade
-function showSectionWithTransition(sectionName) {
-    const currentSection = document.querySelector('.section.active');
-    const targetSection = document.getElementById(sectionName.replace(/\s/g, '-')); // replace spaces with dashes
-
-    if (!targetSection) return;
-
-    if (currentSection && currentSection !== targetSection) {
-        currentSection.style.opacity = '0';
-        currentSection.style.transform = 'translateY(20px)';
-
-        setTimeout(() => {
-            currentSection.classList.remove('active');
-            targetSection.classList.add('active');
-            requestAnimationFrame(() => {
-                targetSection.style.opacity = '1';
-                targetSection.style.transform = 'translateY(0)';
-            });
-
-            if (sectionName.toLowerCase().includes('destination')) loadDestinationsEnhanced();
-            if (sectionName.toLowerCase().includes('taxi-packages') || sectionName.toLowerCase().includes('packages')) loadPackagesEnhanced();
-        }, 300);
-    } else if (!currentSection) {
-        targetSection.classList.add('active');
-        targetSection.style.opacity = '1';
-        targetSection.style.transform = 'translateY(0)';
-    }
-    updateNavigationEnhanced(sectionName);
+// Mobile menu toggle
+function setupMobileMenu() {
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+  navToggle.addEventListener('click', () => navMenu.classList.toggle('active'));
+  document.querySelectorAll('.nav-link').forEach(link =>
+    link.addEventListener('click', () => navMenu.classList.remove('active'))
+  );
 }
 
-// Update nav active link
-function updateNavigationEnhanced(sectionName) {
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.classList.remove('active');
-        if (link.getAttribute('data-section') === sectionName) {
-            link.classList.add('active');
-            addRippleEffect(link);
-        }
-    });
+// Load featured destinations
+function loadFeaturedDestinations() {
+  const container = document.getElementById('featured-destinations');
+  if (!container) return;
+  const featured = appData.destinations.slice(0, 3);
+  container.innerHTML = featured.map(d => `
+    <div class="card" onclick="alert('Details: ${d.name}')">
+      <div class="card-image">${d.emoji} ${d.name}</div>
+      <div class="card-content">
+        <h3>${d.emoji} ${d.name}</h3>
+        <p>${d.description}</p>
+      </div>
+    </div>
+  `).join('');
 }
 
-// Adds ripple effect on nav click for UX
-function addRippleEffect(element) {
-    const ripple = document.createElement('span');
-    ripple.className = 'ripple-effect';
-    element.appendChild(ripple);
-
-    setTimeout(() => ripple.remove(), 600);
+// Load taxi packages
+function loadTaxiPackages() {
+  const container = document.getElementById('packages-grid');
+  if (!container) return;
+  container.innerHTML = currentPackages.map(p => `
+    <div class="card" onclick="goToTaxiService()">
+      <div class="card-image">${p.emoji} ${p.destination}</div>
+      <div class="card-content">
+        <h3>${p.emoji} ${p.name}</h3>
+        <p>${p.highlights}</p>
+        <button class="btn btn--primary" onclick="event.stopPropagation(); goToContact()">Enquire Now</button>
+      </div>
+    </div>
+  `).join('');
 }
 
-// Load featured destinations (top 3)
-function loadFeaturedDestinationsEnhanced() {
-    const container = document.getElementById('featured-destinations');
-    if (!container) return;
-
-    const featuredDestinations = appData.destinations.slice(0, 3);
-    container.innerHTML = featuredDestinations.map((d, i) => `
-        <div class="card slide-up" style="animation-delay: ${i * 0.2}s" onclick="showDestinationDetailsEnhanced(${d.id})">
-            <div class="card-image">${d.emoji} ${d.name}</div>
-            <div class="card-content">
-                <h3 class="card-title">${d.emoji} ${d.name}</h3>
-                <p class="card-description">${d.description}</p>
-                <div class="card-highlights">
-                  ${d.highlights.map(h => `<span class="highlight-tag">${h}</span>`).join('')}
-                </div>
-            </div>
-        </div>
-    `).join('');
-    addCardHoverEffects();
+// Go to Taxi service (booking)
+function goToTaxiService() {
+  showSection('taxi-service');
+  window.scrollTo({top: document.getElementById('taxi-service').offsetTop - 50, behavior: 'smooth'});
 }
 
-// Load featured taxi packages (top 3)
-function loadFeaturedPackagesEnhanced() {
-    const container = document.getElementById('featured-packages');
-    if (!container) return;
-
-    const featuredPackages = appData.packages.slice(0, 3);
-    container.innerHTML = featuredPackages.map((p, i) => `
-        <div class="card slide-up" style="animation-delay: ${i * 0.2}s" onclick="goToTaxiBooking()">
-            <div class="card-image">${p.emoji} ${p.destination}</div>
-            <div class="card-content">
-                <h3 class="card-title">${p.emoji} ${p.name}</h3>
-                <p class="card-description">${p.highlights}</p>
-                <button class="btn btn--primary" onclick="event.stopPropagation(); goToContact()">Enquire Now</button>
-            </div>
-        </div>
-    `).join('');
-    addCardHoverEffects();
-}
-
-// Load all taxi packages in Taxi Packages section
-function loadPackagesEnhanced() {
-    const container = document.getElementById('packages-grid');
-    if (!container) return;
-
-    container.innerHTML = currentPackages.map(pkg => `
-        <div class="card fade-in" onclick="goToTaxiBooking()">
-            <div class="card-image">${pkg.emoji} ${pkg.destination}</div>
-            <div class="card-content">
-                <h3 class="card-title">${pkg.emoji} ${pkg.name}</h3>
-                <p class="card-description">${pkg.highlights}</p>
-                <button class="btn btn--primary" onclick="event.stopPropagation(); goToContact()">Enquire Now</button>
-            </div>
-        </div>
-    `).join('');
-    addCardHoverEffects();
-}
-
-// Go to Taxi Booking Section (called on package click)
-function goToTaxiBooking() {
-    showSectionWithTransition('taxi');
-    window.scrollTo({top: document.getElementById('taxi').offsetTop - 60, behavior: 'smooth'});
-}
-
-// Redirect "Enquire Now" button to Contact section
+// Go to Contact section for enquiry
 function goToContact() {
-    showSectionWithTransition('contact');
-    window.scrollTo({top: document.getElementById('contact').offsetTop - 60, behavior: 'smooth'});
+  showSection('contact');
+  window.scrollTo({top: document.getElementById('contact').offsetTop - 50, behavior: 'smooth'});
 }
 
-// Utility - card hover effect
-function addCardHoverEffects() {
-    document.querySelectorAll('.card').forEach(card => {
-        card.addEventListener('mouseenter', () => {
-            card.style.transform = 'translateY(-10px) scale(1.02)';
-            card.style.boxShadow = '0 20px 40px rgba(0,0,0,0.25)';
-        });
-        card.addEventListener('mouseleave', () => {
-            card.style.transform = '';
-            card.style.boxShadow = '';
-        });
+// Setup filters
+function setupFilterListeners() {
+  document.querySelectorAll('[data-region]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentDestinations = btn.dataset.region === 'all' ? [...appData.destinations] :
+        appData.destinations.filter(d => d.region === btn.dataset.region);
+      loadDestinations();
+      document.querySelectorAll('[data-region]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     });
-}
-
-// Setup filters event listeners
-function setupFilterListenersEnhanced() {
-    document.querySelectorAll('[data-region]').forEach(button => {
-        button.addEventListener('click', () => {
-            filterDestinationsEnhanced(button.getAttribute('data-region'));
-            document.querySelectorAll('[data-region]').forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            addRippleEffect(button);
-        });
+  });
+  document.querySelectorAll('[data-type]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      currentPackages = btn.dataset.type === 'all' ? [...appData.packages] :
+        appData.packages.filter(p => p.type === btn.dataset.type);
+      loadTaxiPackages();
+      document.querySelectorAll('[data-type]').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
     });
-    document.querySelectorAll('[data-type]').forEach(button => {
-        button.addEventListener('click', () => {
-            filterPackagesEnhanced(button.getAttribute('data-type'));
-            document.querySelectorAll('[data-type]').forEach(btn => btn.classList.remove('active'));
-            button.classList.add('active');
-            addRippleEffect(button);
-        });
-    });
+  });
 }
 
-// Filter destinations by region
-function filterDestinationsEnhanced(region) {
-    if (region === 'all') {
-        currentDestinations = [...appData.destinations];
-    } else {
-        currentDestinations = appData.destinations.filter(d => d.region === region);
-    }
-    loadDestinationsEnhanced();
+// Load filtered destinations
+function loadDestinations() {
+  const container = document.getElementById('destinations-grid');
+  if (!container) return;
+  container.innerHTML = currentDestinations.map(d => `
+    <div class="card" onclick="alert('Details: ${d.name}')">
+      <div class="card-image">${d.emoji} ${d.name}</div>
+      <div class="card-content">
+        <h3>${d.emoji} ${d.name}</h3>
+        <p>${d.description}</p>
+      </div>
+    </div>
+  `).join('');
 }
 
-// Filter packages by type
-function filterPackagesEnhanced(type) {
-    if (type === 'all') {
-        currentPackages = [...appData.packages];
-    } else {
-        currentPackages = appData.packages.filter(p => p.type === type);
-    }
-    loadPackagesEnhanced();
-}
-
-// Search destinations
+// Search functions
 function searchDestinations() {
-    const input = document.getElementById('destination-search');
-    if (!input) return;
-    const searchTerm = input.value.toLowerCase();
-
-    if (!searchTerm.trim()) {
-        currentDestinations = [...appData.destinations];
-    } else {
-        currentDestinations = appData.destinations.filter(d =>
-            d.name.toLowerCase().includes(searchTerm) ||
-            d.description.toLowerCase().includes(searchTerm) ||
-            d.region.toLowerCase().includes(searchTerm) ||
-            d.highlights.some(h => h.toLowerCase().includes(searchTerm))
-        );
-    }
-    loadDestinationsEnhanced();
+  const v = document.getElementById('destination-search').value.toLowerCase();
+  currentDestinations = !v ? [...appData.destinations] :
+    appData.destinations.filter(d => d.name.toLowerCase().includes(v) || d.description.toLowerCase().includes(v));
+  loadDestinations();
 }
-
-// Search packages
 function searchPackages() {
-    const input = document.getElementById('package-search');
-    if (!input) return;
-    const searchTerm = input.value.toLowerCase();
-
-    if (!searchTerm.trim()) {
-        currentPackages = [...appData.packages];
-    } else {
-        currentPackages = appData.packages.filter(p =>
-            p.name.toLowerCase().includes(searchTerm) ||
-            p.destination.toLowerCase().includes(searchTerm) ||
-            p.highlights.toLowerCase().includes(searchTerm)
-        );
-    }
-    loadPackagesEnhanced();
+  const v = document.getElementById('package-search').value.toLowerCase();
+  currentPackages = !v ? [...appData.packages] :
+    appData.packages.filter(p => p.name.toLowerCase().includes(v) || p.destination.toLowerCase().includes(v));
+  loadTaxiPackages();
 }
 
-// Modal management
-function showModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-        modal.classList.add('active');
-        document.body.style.overflow = 'hidden';
-    }
+// Form submit handlers
+function setupFormHandlers() {
+  const taxiForm = document.getElementById('taxi-form');
+  taxiForm?.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Taxi booking submitted!'); // Replace with your backend submission
+    taxiForm.reset();
+  });
+  const contactForm = document.getElementById('contact-form');
+  contactForm?.addEventListener('submit', e => {
+    e.preventDefault();
+    alert('Contact form submitted!'); // Replace with your backend submission
+    contactForm.reset();
+  });
 }
-
-function closeModal(id) {
-    const modal = document.getElementById(id);
-    if (modal) {
-        modal.classList.remove('active');
-        document.body.style.overflow = '';
-    }
-}
-
-// Scroll effects & Intersection Observer skipped for brevity, keep as is.
-
-// Initialization call at the end (you may already have it)
-initializeApp();
-setupFilterListenersEnhanced();
-loadFeaturedDestinationsEnhanced();
-loadFeaturedPackagesEnhanced();
-
-// Export globals if needed:
-window.showSection = showSectionWithTransition;
-window.goToContact = goToContact;
-window.goToTaxiBooking = goToTaxiBooking;
-window.searchDestinations = searchDestinations;
-window.searchPackages = searchPackages;
