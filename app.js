@@ -1,4 +1,6 @@
 // Fixed Application Data
+const API_BASE_URL = 'https://tridevtourtravel-production.up.railway.app';
+
 const appData = {
   destinations: [
     {
@@ -335,28 +337,58 @@ function showDestinationDetails(id) {
 
 // Event listeners setup
 function setupEventListeners() {
-  // Forms
-  const taxiForm = document.getElementById('taxi-form');
-  if (taxiForm) {
-    taxiForm.addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('🚗 Taxi Booked! You will receive confirmation soon.');
-      taxiForm.reset();
-    });
-  }
-
+  // Contact form handler
   const contactForm = document.getElementById('contact-form');
   if (contactForm) {
-    contactForm.addEventListener('submit', function(e) {
+    contactForm.addEventListener('submit', async function(e) {
       e.preventDefault();
-      alert('📩 Message sent! We will contact you soon.');
-      contactForm.reset();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/contact`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        alert(result.message);
+        if (result.status === 'success') contactForm.reset();
+      } catch (error) {
+        alert('Error sending message. Please try again.');
+      }
     });
   }
 
-  // Filters
+  // Taxi form handler  
+  const taxiForm = document.getElementById('taxi-form');
+  if (taxiForm) {
+    taxiForm.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const formData = new FormData(e.target);
+      const data = Object.fromEntries(formData);
+      
+      try {
+        const response = await fetch(`${API_BASE_URL}/api/taxi`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+        
+        const result = await response.json();
+        alert(result.message);
+        if (result.status === 'success') taxiForm.reset();
+      } catch (error) {
+        alert('Error submitting booking. Please try again.');
+      }
+    });
+  }
+
+  // Setup filters (moved inside the function)
   setupFilterListeners();
 }
+
 
 // Filter setup
 function setupFilterListeners() {
